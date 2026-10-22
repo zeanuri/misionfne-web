@@ -1,0 +1,1262 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fondo Nueva Evangelización · Proyectos</title>
+<meta name="description" content="Proyectos presentados al Fondo Nueva Evangelización y estado de su tramitación.">
+<style>
+:root { --bg: #f4f6fb; --card: #fff; --line: #e3e8f1; --fg: #0f172a; --fg-2: #334155; --mut: #64748b; --acc: #4f46e5;
+  --ok: #15803d; --ok-soft: #dcfce7; --warn: #b45309; --warn-soft: #fef3c7; --info: #0369a1; --info-soft: #e0f2fe;
+  --violet: #6d28d9; --violet-soft: #ede9fe; --mut-soft: #eef1f6; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0a0f1d; --card: #121a2e; --line: #1f2a44; --fg: #e5e9f2; --fg-2: #c3cad9; --mut: #8a96ad; --acc: #818cf8;
+  --ok: #4ade80; --ok-soft: #12301f; --warn: #fbbf24; --warn-soft: #33270b; --info: #38bdf8; --info-soft: #0b2a3b;
+  --violet: #a78bfa; --violet-soft: #241a45; --mut-soft: #1a2338; } }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.55 "Segoe UI", system-ui, -apple-system, sans-serif; }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 32px 16px 48px; }
+header h1 { font-size: 28px; line-height: 1.2; margin: 0 0 8px; }
+header p { color: var(--fg-2); margin: 0; max-width: 70ch; }
+.estados { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 28px 0 20px; }
+.estado { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; cursor: pointer; text-align: left; font: inherit; color: inherit; }
+.estado[aria-pressed="true"] { border-color: var(--acc); box-shadow: 0 0 0 2px var(--acc) inset; }
+.estado { min-width: 0; } .estado .pill { white-space: normal; }
+.estado .n { font-size: 22px; font-weight: 700; display: block; }
+.estado small { color: var(--mut); display: block; margin-top: 4px; line-height: 1.35; }
+.filtros { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; }
+.filtros input, .filtros select { font: inherit; color: inherit; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 9px 12px; }
+.filtros input { flex: 1 1 260px; }
+.tabla { background: var(--card); border: 1px solid var(--line); border-radius: 12px; overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 11px 14px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+th { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--mut); font-weight: 600; }
+tr:last-child td { border-bottom: 0; }
+td.num { font-variant-numeric: tabular-nums; color: var(--mut); white-space: nowrap; }
+.pill { display: inline-block; font-size: 12.5px; font-weight: 600; padding: 2px 10px; border-radius: 99px; white-space: nowrap; }
+.ok { color: var(--ok); background: var(--ok-soft); } .warn { color: var(--warn); background: var(--warn-soft); }
+.info { color: var(--info); background: var(--info-soft); } .violet { color: var(--violet); background: var(--violet-soft); }
+.mut { color: var(--mut); background: var(--mut-soft); }
+.vacio { padding: 24px; color: var(--mut); text-align: center; }
+footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
+.lugar { display: none; color: var(--mut); font-size: 13.5px; margin-top: 2px; }
+@media (max-width: 640px) { th:nth-child(3), td:nth-child(3), th:nth-child(4), td:nth-child(4) { display: none; } .lugar { display: block; } header h1 { font-size: 23px; } th, td { padding: 10px; } .estados { grid-template-columns: 1fr 1fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Fondo Nueva Evangelización</h1>
+  <p>El Fondo colabora con diócesis y entidades de la Iglesia en otros países que necesitan apoyo para proyectos de carácter pastoral y evangelizador. Aquí puede consultarse cada proyecto presentado y el estado de su tramitación.</p>
+</header>
+<div class="estados" role="group" aria-label="Filtrar por estado">
+  <button class="estado" type="button" data-filtro="Registrado" aria-pressed="false"><span class="n">17</span><span class="pill info">Registrado</span><small>La solicitud se ha recibido y registrado; se revisa que la documentación esté completa.</small></button>
+  <button class="estado" type="button" data-filtro="En estudio" aria-pressed="false"><span class="n">361</span><span class="pill warn">En estudio</span><small>El proyecto se estudia en el Fondo y su Comité Asesor hasta la concesión de la ayuda.</small></button>
+  <button class="estado" type="button" data-filtro="Aprobado" aria-pressed="false"><span class="n">0</span><span class="pill ok">Aprobado</span><small>La ayuda está concedida y en trámite de pago.</small></button>
+  <button class="estado" type="button" data-filtro="Ayuda recibida" aria-pressed="false"><span class="n">0</span><span class="pill ok">Ayuda recibida</span><small>El beneficiario ha acusado recibo de la ayuda.</small></button>
+  <button class="estado" type="button" data-filtro="Justificado" aria-pressed="false"><span class="n">0</span><span class="pill ok">Justificado</span><small>El proyecto se ha realizado y justificado con su informe final.</small></button>
+  <button class="estado" type="button" data-filtro="Sin ayuda" aria-pressed="false"><span class="n">10</span><span class="pill mut">Sin ayuda</span><small>El proyecto no ha recibido ayuda del Fondo.</small></button>
+</div>
+<div class="filtros">
+  <input type="search" id="q" placeholder="Buscar por número, título, diócesis o país" aria-label="Buscar">
+  <select id="continente" aria-label="Continente"><option value="">Todos los continentes</option><option>África</option><option>América</option><option>Asia</option><option>Europa</option></select>
+</div>
+<div class="tabla">
+<table>
+<thead><tr><th>Nº</th><th>Proyecto</th><th>Diócesis</th><th>País</th><th>Estado</th></tr></thead>
+<tbody>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">12097</td><td><b>Vehículo 4x4 para misión de primera necesidad</b><div class="lugar">Mahagi-Nyoka · Rep. Dem. del Congo</div></td><td>Mahagi-Nyoka</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11983</td><td><b>Compra de vehículo para actividades pastorales</b><div class="lugar">Caracas · Venezuela</div></td><td>Caracas</td><td>Venezuela</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="Europa">
+      <td class="num">11981</td><td><b>Apoyo a la formación de los seminaristas de Shkodër-Puly</b><div class="lugar">Shkodër-Pult · Albania</div></td><td>Shkodër-Pult</td><td>Albania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11980</td><td><b>Formación de candidatos al sacerdocio para el curso 2026-2027</b><div class="lugar">Garissa · Kenia</div></td><td>Garissa</td><td>Kenia</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="Sin ayuda" data-continente="América">
+      <td class="num">11979</td><td><b>Fortalecimiento de la Agencia de Noticias de la Conferencia Episcopal Peruana</b><div class="lugar">Perú · Perú</div></td><td>Perú</td><td>Perú</td>
+      <td><span class="pill mut">Sin ayuda</span></td></tr>
+<tr data-estado="Sin ayuda" data-continente="África">
+      <td class="num">11918</td><td><b>Formación humana, espiritual y misionera para religiosas</b><div class="lugar">Yaoundé · Camerún</div></td><td>Yaoundé</td><td>Camerún</td>
+      <td><span class="pill mut">Sin ayuda</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11895</td><td><b>Remodelación de la Cocina del Seminario Mayor</b><div class="lugar">Cumaná · Venezuela</div></td><td>Cumaná</td><td>Venezuela</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11894</td><td><b>Restauración de la Iglesia, en Miniere</b><div class="lugar">Fort-Liberté · Haití</div></td><td>Fort-Liberté</td><td>Haití</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11893</td><td><b>Construcción Centro y Materiales Catequeticos para la Pastoral Familiar, en Mbalizi</b><div class="lugar">Mbeya · Tanzania</div></td><td>Mbeya</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11892</td><td><b>Vehículo para la Pastoral de la Parroquia, en Tukumbi</b><div class="lugar">Mbeya · Tanzania</div></td><td>Mbeya</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11891</td><td><b>Rehabilitación de la Cocina del Centro Profesional, en Kayenzi</b><div class="lugar">Kabgayi · Rwanda</div></td><td>Kabgayi</td><td>Rwanda</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="Registrado" data-continente="África">
+      <td class="num">11890</td><td><b>Renovación del Tejado de la Iglesia, en Rasaniro</b><div class="lugar">Butare · Rwanda</div></td><td>Butare</td><td>Rwanda</td>
+      <td><span class="pill info">Registrado</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11889</td><td><b>Formación Catequética para Familias Cristianas, en Mukuna</b><div class="lugar">Butembo-Beni · Rep. Dem. del Congo</div></td><td>Butembo-Beni</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="Asia">
+      <td class="num">11888</td><td><b>Plan de Formación para Empoderamiento de Adolescentes y Madres Jóvenes, en Fatehabad</b><div class="lugar">Agra · India</div></td><td>Agra</td><td>India</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11887</td><td><b>Restauración Cubierta del Centro Catequético, en Gualaceo</b><div class="lugar">Cuenca · Ecuador</div></td><td>Cuenca</td><td>Ecuador</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11886</td><td><b>Rehabilitación de la Iglesia de Shandala</b><div class="lugar">Idiofa · Rep. Dem. del Congo</div></td><td>Idiofa</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11885</td><td><b>Rehabilitación de la Iglesia, en Banga/Banneux</b><div class="lugar">Idiofa · Rep. Dem. del Congo</div></td><td>Idiofa</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11884</td><td><b>Rehabilitación de la Casa Parroquial en Dedomay-Kashosho</b><div class="lugar">Idiofa · Rep. Dem. del Congo</div></td><td>Idiofa</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11883</td><td><b>Rehabilitación del Tejado y Pavimentar la Iglesia</b><div class="lugar">Idiofa · Rep. Dem. del Congo</div></td><td>Idiofa</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11882</td><td><b>Amplicación de la Iglesia de Biyenge</b><div class="lugar">Idiofa · Rep. Dem. del Congo</div></td><td>Idiofa</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11881</td><td><b>Equipamiento Litúrgico para 12 Parroquias</b><div class="lugar">Idiofa · Rep. Dem. del Congo</div></td><td>Idiofa</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="Sin ayuda" data-continente="África">
+      <td class="num">11879</td><td><b>Conferencia Continental sobre la Educación Católica en África</b><div class="lugar">SECAM · Ghana</div></td><td>SECAM</td><td>Ghana</td>
+      <td><span class="pill mut">Sin ayuda</span></td></tr>
+<tr data-estado="En estudio" data-continente="Europa">
+      <td class="num">11878</td><td><b>Ayuda a la Escuela de Formación Misionera</b><div class="lugar">Madrid · España</div></td><td>Madrid</td><td>España</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11877</td><td><b>Construcción de Dormitorios para Niños Vulnerables, en RuKuraijo</b><div class="lugar">Kayanga · Tanzania</div></td><td>Kayanga</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11876</td><td><b>Construcción de un Depósito de Agua para la aldea, en Kisanga</b><div class="lugar">Morogoro · Tanzania</div></td><td>Morogoro</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11874</td><td><b>Construcción del Tejado de la Iglesia, en Walusubi</b><div class="lugar">Lugazi · Uganda</div></td><td>Lugazi</td><td>Uganda</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11873</td><td><b>Bicicletas para los Catequistas de la Parroquia, Bakanja-Kayuyu</b><div class="lugar">Kasongo · Rep. Dem. del Congo</div></td><td>Kasongo</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11872</td><td><b>Restauración de la sacristía de la iglesia</b><div class="lugar">Songea · Tanzania</div></td><td>Songea</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11868</td><td><b>Equipamiento Sala de Informática del Arzobispado</b><div class="lugar">Owando · Rep. del Congo</div></td><td>Owando</td><td>Rep. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11867</td><td><b>Sistema de Energía Solar para la Iglesia y Casa Parroquial</b><div class="lugar">Douala · Camerún</div></td><td>Douala</td><td>Camerún</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11866</td><td><b>Becas para Sacerdotes de la diócesis</b><div class="lugar">Lolo · Rep. Dem. del Congo</div></td><td>Lolo</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11865</td><td><b>Sistema de Energía Solar para la Parroquia, en Bokata</b><div class="lugar">Lolo · Rep. Dem. del Congo</div></td><td>Lolo</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11864</td><td><b>Formación Permanente de Sacerdotes Diocesanos</b><div class="lugar">Lolo · Rep. Dem. del Congo</div></td><td>Lolo</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="Sin ayuda" data-continente="América">
+      <td class="num">11863</td><td><b>Formación de jóvenes para la construcción de Paz</b><div class="lugar">Venezuela · Venezuela</div></td><td>Venezuela</td><td>Venezuela</td>
+      <td><span class="pill mut">Sin ayuda</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11862</td><td><b>Finalizar Construcción de Salón Multiusos</b><div class="lugar">Owando · Rep. del Congo</div></td><td>Owando</td><td>Rep. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11861</td><td><b>Rehabilitación Iglesia y Construcción de Sacristía, en Komkech</b><div class="lugar">Nebbi · Uganda</div></td><td>Nebbi</td><td>Uganda</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11860</td><td><b>Formación de Seminaristas, en Alto Amazonas</b><div class="lugar">Yurimaguas · Perú</div></td><td>Yurimaguas</td><td>Perú</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="Registrado" data-continente="Asia">
+      <td class="num">11859</td><td><b>Construcción del Tejado de la Catedral</b><div class="lugar">Raigarh · India</div></td><td>Raigarh</td><td>India</td>
+      <td><span class="pill info">Registrado</span></td></tr>
+<tr data-estado="Registrado" data-continente="América">
+      <td class="num">11858</td><td><b>Construcción de Aulas en Escuela Infantil Parroquial para Huérfanos, de Bernagousse</b><div class="lugar">Jérémie · Haití</div></td><td>Jérémie</td><td>Haití</td>
+      <td><span class="pill info">Registrado</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11857</td><td><b>Restauración del Tejado del Monasterio de las Religiosas, en Bellavista</b><div class="lugar">San Miguel de Ibarra · Ecuador</div></td><td>San Miguel de Ibarra</td><td>Ecuador</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11856</td><td><b>Construcción de Tercer Piso del Centro de Capacitación Integral</b><div class="lugar">Ipiales · Colombia</div></td><td>Ipiales</td><td>Colombia</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11855</td><td><b>Formación continua de las Hermanas Novicias, en Samagan</b><div class="lugar">Bobo-Dioulasso · Burkina Faso</div></td><td>Bobo-Dioulasso</td><td>Burkina Faso</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11854</td><td><b>Restauración de la Pintura Interior de la Catedral</b><div class="lugar">Almenara · Brasil</div></td><td>Almenara</td><td>Brasil</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11853</td><td><b>Construcción de un Salón Parroquial Multiusos, en Villa Galindo</b><div class="lugar">Cochabamba · Bolivia</div></td><td>Cochabamba</td><td>Bolivia</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11852</td><td><b>Equipamiento del Comedor y Cocina del Seminario, en Cidade Alta</b><div class="lugar">Huambo · Angola</div></td><td>Huambo</td><td>Angola</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11851</td><td><b>Construcción de la Iglesia, en Orgumi</b><div class="lugar">Arusha · Tanzania</div></td><td>Arusha</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11850</td><td><b>Rehabilitación de la Casa de las Religiosas, Lemara-Njiro</b><div class="lugar">Arusha · Tanzania</div></td><td>Arusha</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11849</td><td><b>Construcción de Puertas y Ventanas para la Capilla del Seminario</b><div class="lugar">Arusha · Tanzania</div></td><td>Arusha</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11848</td><td><b>Construcción de Escuela de Secundaria, en Oussouye</b><div class="lugar">Ziguinchor · Senegal</div></td><td>Ziguinchor</td><td>Senegal</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11847</td><td><b>Vehículo para la Pastoral de la Parroquia, en Nobol</b><div class="lugar">Daule · Ecuador</div></td><td>Daule</td><td>Ecuador</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11845</td><td><b>Construcción y Equipamiento de la Residencia Sacerdotal</b><div class="lugar">Lwena · Angola</div></td><td>Lwena</td><td>Angola</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11843</td><td><b>Formación de Agentes de Pastoral</b><div class="lugar">Nacala · Mozambique</div></td><td>Nacala</td><td>Mozambique</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="Asia">
+      <td class="num">11841</td><td><b>Construcción del Convento en Nandipalli</b><div class="lugar">Cuddapah · India</div></td><td>Cuddapah</td><td>India</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11839</td><td><b>Organización y Celebración del Congreso Misionero Diocesano 2026</b><div class="lugar">Sonsón-Rionegro · Colombia</div></td><td>Sonsón-Rionegro</td><td>Colombia</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11838</td><td><b>Rehabilitación de la sede del Obispado</b><div class="lugar">Guarenas · Venezuela</div></td><td>Guarenas</td><td>Venezuela</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11837</td><td><b>Vehículo para Fortalecer la Pastoral Salesiana, en San Félix</b><div class="lugar">Ciudad Guayana · Venezuela</div></td><td>Ciudad Guayana</td><td>Venezuela</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11836</td><td><b>Embarcación al Servicio del Evangelio en La Esmeralda, Amazonas</b><div class="lugar">Puerto Ayacucho · Venezuela</div></td><td>Puerto Ayacucho</td><td>Venezuela</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11834</td><td><b>Programas Radiofónicos Bilingües de Evangelización y Promoción Humana, Cotopaxi</b><div class="lugar">Latacunga · Ecuador</div></td><td>Latacunga</td><td>Ecuador</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11832</td><td><b>Construcción del Convento para las Hermanas, en Nyegezi</b><div class="lugar">Mwanza · Tanzania</div></td><td>Mwanza</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11830</td><td><b>Vehículo para la Comunidad de las Religiosas, en Mbuba</b><div class="lugar">Kisantu · Rep. Dem. del Congo</div></td><td>Kisantu</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11829</td><td><b>Formación de Catequistas y Animadores Juveniles</b><div class="lugar">Kenge · Rep. Dem. del Congo</div></td><td>Kenge</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11827</td><td><b>Rehabilitación del pabellón de duchas y aseos del Seminario, Kachebere</b><div class="lugar">Lilongwe · Malawi</div></td><td>Lilongwe</td><td>Malawi</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11826</td><td><b>Canalización de Agua para el Seminario Mayor</b><div class="lugar">Moyobamba · Perú</div></td><td>Moyobamba</td><td>Perú</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11825</td><td><b>Renovación del Centro Pastoral Cardinal Otunga Rongo</b><div class="lugar">Homa Bay · Kenia</div></td><td>Homa Bay</td><td>Kenia</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="Asia">
+      <td class="num">11824</td><td><b>Construcción del Convento para las Hermanas en Bargawan</b><div class="lugar">Ambikapur · India</div></td><td>Ambikapur</td><td>India</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="Asia">
+      <td class="num">11823</td><td><b>Construcción de un Centro de Talleres Sostenibles para Mujeres y Viudas Dalit</b><div class="lugar">Vellore · India</div></td><td>Vellore</td><td>India</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11822</td><td><b>Construcción del Tejado de la Capilla de Brodequin</b><div class="lugar">Les Cayes · Haití</div></td><td>Les Cayes</td><td>Haití</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11821</td><td><b>Acordes por la Vida: Formación musical para revitalizar la pastoral juvenil</b><div class="lugar">San Andrés y Providencia · Colombia</div></td><td>San Andrés y Providencia</td><td>Colombia</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11820</td><td><b>Construcción de 3 Salones para actividades parroquiales y catequesis, en Samba</b><div class="lugar">Koudougou · Burkina Faso</div></td><td>Koudougou</td><td>Burkina Faso</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11819</td><td><b>Formación de Seminaristas de 2 Seminarios Diocesanos</b><div class="lugar">Los Teques · Venezuela</div></td><td>Los Teques</td><td>Venezuela</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="Asia">
+      <td class="num">11818</td><td><b>Construcción de Casa Parroquial, en Chakri</b><div class="lugar">Islamabad-Rawalpindi · Pakistán</div></td><td>Islamabad-Rawalpindi</td><td>Pakistán</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="Registrado" data-continente="África">
+      <td class="num">11817</td><td><b>Construcción de Escuela Infantil para niños del area rural, en Ngariama-Ikurungu</b><div class="lugar">Murang&#39;a · Kenia</div></td><td>Murang&#39;a</td><td>Kenia</td>
+      <td><span class="pill info">Registrado</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11816</td><td><b>Formación de Jóvenes en Escrituras para su difusión a la comunidad</b><div class="lugar">Kitale · Kenia</div></td><td>Kitale</td><td>Kenia</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="Asia">
+      <td class="num">11815</td><td><b>Renovación de la Escuela Secundaria de Ingles, en Badvel</b><div class="lugar">Cuddapah · India</div></td><td>Cuddapah</td><td>India</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11814</td><td><b>Construcción de nueva Iglesia, en Gonzague</b><div class="lugar">Grand-Bassam · Costa de Marfil</div></td><td>Grand-Bassam</td><td>Costa de Marfil</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11813</td><td><b>Rehabilitación de la Casa Parroquial, de Orussi</b><div class="lugar">Nebbi · Uganda</div></td><td>Nebbi</td><td>Uganda</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11812</td><td><b>Vehículo agríclola para los Religiosos y la comunidad, en Danyi</b><div class="lugar">Lomé · Togo</div></td><td>Lomé</td><td>Togo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11811</td><td><b>Renovación del Convento y del Sistema de Energía Solar para las Religiosas</b><div class="lugar">Kikwit · Rep. Dem. del Congo</div></td><td>Kikwit</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11810</td><td><b>Formación de Catequistas y Voluntarios</b><div class="lugar">Uvira · Rep. Dem. del Congo</div></td><td>Uvira</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11809</td><td><b>Construcción de una nueva Iglesia, en Ampasy</b><div class="lugar">Farafangana · Madagascar</div></td><td>Farafangana</td><td>Madagascar</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="Asia">
+      <td class="num">11808</td><td><b>Contrucción de Capilla en Centro de Jóvenes y Mujeres, Vasantharayapuram</b><div class="lugar">Guntur · India</div></td><td>Guntur</td><td>India</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="Asia">
+      <td class="num">11807</td><td><b>Construcción de Capilla, Salón Multiusos y Ampliación Residencia del Seminario</b><div class="lugar">Bangalore · India</div></td><td>Bangalore</td><td>India</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="Registrado" data-continente="Asia">
+      <td class="num">11806</td><td><b>Instrumentos Musicales para la Escuela Rural Secundaria, en Pathiavaram</b><div class="lugar">Vellore · India</div></td><td>Vellore</td><td>India</td>
+      <td><span class="pill info">Registrado</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11805</td><td><b>Rehabilitación de la Escuela parroquial de Lory</b><div class="lugar">Cap-Haïtien · Haití</div></td><td>Cap-Haïtien</td><td>Haití</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11804</td><td><b>Vehículo para la Pastoral Diocesana del Obispo</b><div class="lugar">San Carlos · Venezuela</div></td><td>San Carlos</td><td>Venezuela</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11803</td><td><b>Bancos para la Iglesia</b><div class="lugar">San Carlos · Venezuela</div></td><td>San Carlos</td><td>Venezuela</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11802</td><td><b>Construcción de un Salón Parroquial Multiusos</b><div class="lugar">Acarigua-Araure · Venezuela</div></td><td>Acarigua-Araure</td><td>Venezuela</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11801</td><td><b>Equipamiento de las Aulas del Seminiario de Teología, en Inhamizua</b><div class="lugar">Beira · Mozambique</div></td><td>Beira</td><td>Mozambique</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11800</td><td><b>Vehículo para Actividades Pastorales de la Parroquia, Sagabari</b><div class="lugar">Kayes · Mali</div></td><td>Kayes</td><td>Mali</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11799</td><td><b>Construcción de Casa Sacerdotal, en Kaptum</b><div class="lugar">Eldoret · Kenia</div></td><td>Eldoret</td><td>Kenia</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11798</td><td><b>Construcción de Casa de Formación para las Hermanas, en Kitengela</b><div class="lugar">Ngong · Kenia</div></td><td>Ngong</td><td>Kenia</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11797</td><td><b>Reparación del Patio del Centro Diocesano de Formación Pastoral</b><div class="lugar">Jacmel · Haití</div></td><td>Jacmel</td><td>Haití</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11795</td><td><b>Vehículo para la Actividad Pastoral de la Parroquia, en Igoma</b><div class="lugar">Mbeya · Tanzania</div></td><td>Mbeya</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="Sin ayuda" data-continente="África">
+      <td class="num">11794</td><td><b>Construcción (3ªFase) alojamientos para los beneficiarios del CINOPR</b><div class="lugar">Burundi · Burundi</div></td><td>Burundi</td><td>Burundi</td>
+      <td><span class="pill mut">Sin ayuda</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11793</td><td><b>Sistema de Energía Solar en la Comunidad Internacional, en Bohicon</b><div class="lugar">Abomey · Benín</div></td><td>Abomey</td><td>Benín</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11792</td><td><b>Equipos de Sonido e Informática para la Capellanía de la Universidad</b><div class="lugar">Kaya · Burkina Faso</div></td><td>Kaya</td><td>Burkina Faso</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11791</td><td><b>Construcción del Tejado de la Iglesia, en Mukobe</b><div class="lugar">Gitega · Burundi</div></td><td>Gitega</td><td>Burundi</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11790</td><td><b>Rehabilitación de la Parroquia, en Kimbaseke</b><div class="lugar">Kinshasa · Rep. Dem. del Congo</div></td><td>Kinshasa</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11789</td><td><b>Programación de Talleres de Formación para Empoderamiento de Jovenes</b><div class="lugar">Ngong · Kenia</div></td><td>Ngong</td><td>Kenia</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11788</td><td><b>Fortalecimiento Comunicación Institucional entre Congregaciones - CONVER</b><div class="lugar">Puerto Cabello · Venezuela</div></td><td>Puerto Cabello</td><td>Venezuela</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11787</td><td><b>Formación de Catequistas para la Parroquia, en Ndembezi</b><div class="lugar">Shinyanga · Tanzania</div></td><td>Shinyanga</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11786</td><td><b>Finalizar Construcción del Edificio Parroquial, en Busami</b><div class="lugar">Shinyanga · Tanzania</div></td><td>Shinyanga</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11785</td><td><b>Mejorar Suministro de Agua en el Centro de Salud y su Población</b><div class="lugar">Tunduru-Masasi · Tanzania</div></td><td>Tunduru-Masasi</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11784</td><td><b>Vehículo para Actividades Pastorales de los Religiosos, Mtwara</b><div class="lugar">Tunduru-Masasi · Tanzania</div></td><td>Tunduru-Masasi</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11782</td><td><b>Fortalecimiento de las Actividades Pastorales en la Parroquia, Kabila</b><div class="lugar">Mwanza · Tanzania</div></td><td>Mwanza</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11781</td><td><b>Planificar Seminario de Renovación Catequética en la Parroquia, en Bugarika</b><div class="lugar">Mwanza · Tanzania</div></td><td>Mwanza</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11780</td><td><b>Vehículo para la Pastoral de la Parroquia, en Nyaishozi</b><div class="lugar">Kayanga · Tanzania</div></td><td>Kayanga</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11779</td><td><b>Perforar Pozos y Canalizar Agua para los Religiosos y la población</b><div class="lugar">Dar es Salaam · Tanzania</div></td><td>Dar es Salaam</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11778</td><td><b>Renovación del Centro de Formación Catequética, Chitipa</b><div class="lugar">Karonga · Malawi</div></td><td>Karonga</td><td>Malawi</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11777</td><td><b>Equipamiento para 3 Aulas de la Escuela Secundaria, en Kiambu</b><div class="lugar">Nairobi · Kenia</div></td><td>Nairobi</td><td>Kenia</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11776</td><td><b>Restauración de la Iglesia, en Miritini</b><div class="lugar">Mombasa · Kenia</div></td><td>Mombasa</td><td>Kenia</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="Registrado" data-continente="Asia">
+      <td class="num">11775</td><td><b>Construcción de Aseos para el Campus de Servicios Sociales Múltiples, South Arcot</b><div class="lugar">Pondicherry y Cuddalore · India</div></td><td>Pondicherry y Cuddalore</td><td>India</td>
+      <td><span class="pill info">Registrado</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11774</td><td><b>Formación de Seminaristas Diocesanos</b><div class="lugar">Gracias · Honduras</div></td><td>Gracias</td><td>Honduras</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11773</td><td><b>Financiar Profesorado Centro Educativo Parroquial, en Cayemites</b><div class="lugar">Jérémie · Haití</div></td><td>Jérémie</td><td>Haití</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11772</td><td><b>Beca de Estudios Licenciatura Canónica en París</b><div class="lugar">Anse-à-Veau et Miragoâne · Haití</div></td><td>Anse-à-Veau et Miragoâne</td><td>Haití</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11770</td><td><b>Renovación del Techo de la Iglesia, en Alhajuela</b><div class="lugar">Portoviejo · Ecuador</div></td><td>Portoviejo</td><td>Ecuador</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11769</td><td><b>Sistema de Energía Solar para Centro Pastoral Diocesano,</b><div class="lugar">Ciego de Ávila · Cuba</div></td><td>Ciego de Ávila</td><td>Cuba</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11768</td><td><b>Rehabilitación y Equipamiento de Centro de Formación</b><div class="lugar">Bogotá · Colombia</div></td><td>Bogotá</td><td>Colombia</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11767</td><td><b>Construcción Centro de Formación Pastoral y Social, Baía do Sol</b><div class="lugar">Belém · Brasil</div></td><td>Belém</td><td>Brasil</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11766</td><td><b>Renovación de los Dormitorios del Noviciado de Religiosas</b><div class="lugar">Hoima · Uganda</div></td><td>Hoima</td><td>Uganda</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11765</td><td><b>Rehabilitar la Iglesia de Abanga</b><div class="lugar">Nebbi · Uganda</div></td><td>Nebbi</td><td>Uganda</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11764</td><td><b>Construcción de Capilla para el Centro de Formación de Luwala</b><div class="lugar">Kampala · Uganda</div></td><td>Kampala</td><td>Uganda</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11763</td><td><b>Construcción de un Muro para futura Escuela Infantil, en Miyuji</b><div class="lugar">Dodoma · Tanzania</div></td><td>Dodoma</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11762</td><td><b>Rehabilitación de la Iglesia de Sali</b><div class="lugar">Mahenge · Tanzania</div></td><td>Mahenge</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11761</td><td><b>Restauración de la Capilla del Convento de las Religiosas</b><div class="lugar">Mbeya · Tanzania</div></td><td>Mbeya</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11760</td><td><b>Formación de Catequistas para la Parroquia de Kibaoni</b><div class="lugar">Singida · Tanzania</div></td><td>Singida</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11759</td><td><b>Vehículo para Actividades Pastorales del Orfanato en Migolli</b><div class="lugar">Iringa · Tanzania</div></td><td>Iringa</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11758</td><td><b>Rehabilitación de Casa Sacerdotal para estudiantes y pacientes</b><div class="lugar">Mbadaka-Bikoro · Rep. Dem. del Congo</div></td><td>Mbadaka-Bikoro</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11757</td><td><b>Becas de Estudio para tres sacerdotes en la UCC</b><div class="lugar">Mbandaka-Bikoro · Rep. Dem. del Congo</div></td><td>Mbandaka-Bikoro</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="Asia">
+      <td class="num">11755</td><td><b>Finalizar Construcción de la Iglesia en Vatluru</b><div class="lugar">Eluru · India</div></td><td>Eluru</td><td>India</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11754</td><td><b>Vehículo para la Pastoral de la Parroquia</b><div class="lugar">La Ceiba · Honduras</div></td><td>La Ceiba</td><td>Honduras</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11752</td><td><b>Restauración del Centro Parroquial de la Croix</b><div class="lugar">Port-de-Paix · Haití</div></td><td>Port-de-Paix</td><td>Haití</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="Registrado" data-continente="África">
+      <td class="num">11751</td><td><b>Formación en Gestión de casos de abusos en entornos religiosos</b><div class="lugar">Yaoundé · Camerún</div></td><td>Yaoundé</td><td>Camerún</td>
+      <td><span class="pill info">Registrado</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11750</td><td><b>Construcción de estructura y tejado de Casa Sacerdotal, en Kivuvu</b><div class="lugar">Gitega · Burundi</div></td><td>Gitega</td><td>Burundi</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11748</td><td><b>Construcción y equipamiento Sala Multimedia CEDICOM</b><div class="lugar">Dédougou · Burkina Faso</div></td><td>Dédougou</td><td>Burkina Faso</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11746</td><td><b>Rehabilitación del Centro de Pastoral</b><div class="lugar">Valencia · Venezuela</div></td><td>Valencia</td><td>Venezuela</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11745</td><td><b>Rehabilitación del Convento de las Religiosas, en Karema</b><div class="lugar">Mpanda · Tanzania</div></td><td>Mpanda</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11744</td><td><b>Vehículo para la Pastoral Diocesana</b><div class="lugar">Mwanza · Tanzania</div></td><td>Mwanza</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11743</td><td><b>Construcción Salón Multiusos para Escuela Secundaria, Mubuku Valley</b><div class="lugar">Kasese · Uganda</div></td><td>Kasese</td><td>Uganda</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11742</td><td><b>Formación de Catequistas y apoyo a la Evangelización</b><div class="lugar">Ruhengeri · Rwanda</div></td><td>Ruhengeri</td><td>Rwanda</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11741</td><td><b>Rehabilitación del Edifico de la Universidad, en Assepkin Bandundu</b><div class="lugar">Idiofa · Rep. Dem. del Congo</div></td><td>Idiofa</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11740</td><td><b>Sustitución de las puertas de madera del Seminario</b><div class="lugar">Bukavu · Rep. Dem. del Congo</div></td><td>Bukavu</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11739</td><td><b>Construcción y Equipamiento de Oficinas para Centro de Formación</b><div class="lugar">Idiofa · Rep. Dem. del Congo</div></td><td>Idiofa</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11738</td><td><b>Vehículo para la pastoral de la Parroquia, en Dombe</b><div class="lugar">Chimoio · Mozambique</div></td><td>Chimoio</td><td>Mozambique</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11737</td><td><b>Restauración de la Capilla San Isidoro de Sevilla, en Esther</b><div class="lugar">Jérémie · Haití</div></td><td>Jérémie</td><td>Haití</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11736</td><td><b>Construcción de Escuela Primaria Parroquial para niños de 6-12 años, en K-Georges</b><div class="lugar">Gonaïves · Haití</div></td><td>Gonaïves</td><td>Haití</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11735</td><td><b>Continuar Construcción de la Casa Parroquial, en Guegonda</b><div class="lugar">Bafia · Camerún</div></td><td>Bafia</td><td>Camerún</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11734</td><td><b>Vehículo para la actividad pastoral de la Parroquia, en Ngomante</b><div class="lugar">Rutana · Burundi</div></td><td>Rutana</td><td>Burundi</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11733</td><td><b>Construcción de dormitorios y baños en la Casa Parroquial, en Sabcé</b><div class="lugar">Ouahigouya · Burkina Faso</div></td><td>Ouahigouya</td><td>Burkina Faso</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11732</td><td><b>Ampliación de la Iglesia de Mumbeji</b><div class="lugar">Solwezi · Zambia</div></td><td>Solwezi</td><td>Zambia</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11731</td><td><b>Vehículo para la Actividad Misionera de las Religiosas</b><div class="lugar">Petare · Venezuela</div></td><td>Petare</td><td>Venezuela</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11730</td><td><b>Vehículo para la Actividad Pastoral y Social de las Hermanas, Bwanda</b><div class="lugar">Masaka · Uganda</div></td><td>Masaka</td><td>Uganda</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11729</td><td><b>Construcción Residencia de Sacerdotes y Hermanos con necesidades especiales</b><div class="lugar">Iringa · Tanzania</div></td><td>Iringa</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11728</td><td><b>Plan de Formación de agentes de pastoral, en Boyali</b><div class="lugar">Bangui · Rep. Centroafricana</div></td><td>Bangui</td><td>Rep. Centroafricana</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11727</td><td><b>Formación de Animadores de Movimientos Juveniles</b><div class="lugar">Anse-à-Veau et Miragoâne · Haití</div></td><td>Anse-à-Veau et Miragoâne</td><td>Haití</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11726</td><td><b>Construcción (Fase 1) de la Iglesia parroquial</b><div class="lugar">Zacatecoluca · El Salvador</div></td><td>Zacatecoluca</td><td>El Salvador</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11725</td><td><b>Restauración del Techo del Centro de Mayores</b><div class="lugar">Santa Fe de Antioquía · Colombia</div></td><td>Santa Fe de Antioquía</td><td>Colombia</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11724</td><td><b>Adquisición de bancos para la Iglesia Catedral de Rushoroza</b><div class="lugar">Kabale · Uganda</div></td><td>Kabale</td><td>Uganda</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11723</td><td><b>Motos para la actividad pastoral de los Catequistas, en Luvule</b><div class="lugar">Masaka · Uganda</div></td><td>Masaka</td><td>Uganda</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="Registrado" data-continente="Asia">
+      <td class="num">11722</td><td><b>Programa de Educación y Formación de Seminaristas</b><div class="lugar">Maumere · Indonesia</div></td><td>Maumere</td><td>Indonesia</td>
+      <td><span class="pill info">Registrado</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11721</td><td><b>Proceso de Formación Catequética y Promoción de la Mujer, en Talamanca</b><div class="lugar">Limón · Costa Rica</div></td><td>Limón</td><td>Costa Rica</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11720</td><td><b>Proyecto trienal de Formación de futuros Catequistas diocesanos</b><div class="lugar">Mopti · Mali</div></td><td>Mopti</td><td>Mali</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11719</td><td><b>Plan Pastoral para chicas adolescentes y sus familias, en Trinidad</b><div class="lugar">Cienfuegos · Cuba</div></td><td>Cienfuegos</td><td>Cuba</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11717</td><td><b>Finalizar Construcción del Convento de las Hermanas</b><div class="lugar">Fort Portal · Uganda</div></td><td>Fort Portal</td><td>Uganda</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="Europa">
+      <td class="num">11716</td><td><b>Renovación de la Residencia Arzobispal</b><div class="lugar">Ivano-Frankivsk · Ucrania</div></td><td>Ivano-Frankivsk</td><td>Ucrania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11715</td><td><b>Finalizar rehabilitación de la Casa Parroquial, en Chikunda</b><div class="lugar">Tunduru-Masasi · Tanzania</div></td><td>Tunduru-Masasi</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11714</td><td><b>Construcción y Equipamiento de Sala Informática para el noviciado</b><div class="lugar">Kenge · Rep. Dem. del Congo</div></td><td>Kenge</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="Asia">
+      <td class="num">11713</td><td><b>Plan de Desarrollo Social y Pastoral de las comunidades vulnerables en Wayanad</b><div class="lugar">Calicut · India</div></td><td>Calicut</td><td>India</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11712</td><td><b>Construcción del convento para las religiosas</b><div class="lugar">Idiofa · Rep. Dem. del Congo</div></td><td>Idiofa</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="Asia">
+      <td class="num">11711</td><td><b>Construcción de la Iglesia en Uppamagaluru</b><div class="lugar">Guntur · India</div></td><td>Guntur</td><td>India</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="Asia">
+      <td class="num">11706</td><td><b>Rehabilitación del Convento de las religiosas</b><div class="lugar">Vijayawada · India</div></td><td>Vijayawada</td><td>India</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11705</td><td><b>Restaurar el tejado de la Iglesia, en Duverger</b><div class="lugar">Anse-à-Veau et Miragoâne · Haití</div></td><td>Anse-à-Veau et Miragoâne</td><td>Haití</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11704</td><td><b>Renovar Material escolar e informático del Centro Escolar</b><div class="lugar">Cienfuegos · Cuba</div></td><td>Cienfuegos</td><td>Cuba</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11703</td><td><b>Finalizar Construcción Iglesia de Elig-Mfomo</b><div class="lugar">Obala · Camerún</div></td><td>Obala</td><td>Camerún</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11702</td><td><b>Formación en Ecología Integral en la Parroquia de Simulacubo</b><div class="lugar">Cabinda · Angola</div></td><td>Cabinda</td><td>Angola</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="Sin ayuda" data-continente="África">
+      <td class="num">11701</td><td><b>Formación de 200 catequistas</b><div class="lugar">Mali · Mali</div></td><td>Mali</td><td>Mali</td>
+      <td><span class="pill mut">Sin ayuda</span></td></tr>
+<tr data-estado="Registrado" data-continente="África">
+      <td class="num">11700</td><td><b>Construcción de 5 aulas en el Complejo Escolar de Soavimbazha</b><div class="lugar">Miarinarivo · Madagascar</div></td><td>Miarinarivo</td><td>Madagascar</td>
+      <td><span class="pill info">Registrado</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11699</td><td><b>Rehabilitación del edificio de Cáritas Diocesana</b><div class="lugar">Katiola · Costa de Marfil</div></td><td>Katiola</td><td>Costa de Marfil</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11698</td><td><b>Fortalecimiento de la comunicación pastoral diocesana de calidad</b><div class="lugar">Bujumbura · Burundi</div></td><td>Bujumbura</td><td>Burundi</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11697</td><td><b>Continuar Construcción de la Iglesia en Xá-Muteba</b><div class="lugar">Malanje · Angola</div></td><td>Malanje</td><td>Angola</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11696</td><td><b>Reconstrucción Capilla de Blaram</b><div class="lugar">Yagoua · Camerún</div></td><td>Yagoua</td><td>Camerún</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11695</td><td><b>Vehículo para la Pastoral Rural, en Kansi</b><div class="lugar">Butare · Rwanda</div></td><td>Butare</td><td>Rwanda</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11694</td><td><b>Rehabilitación de la Iglesia de Mohomou</b><div class="lugar">N&#39;Zérékoré · Rep. de Guinea (Conakry)</div></td><td>N&#39;Zérékoré</td><td>Rep. de Guinea (Conakry)</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11693</td><td><b>Finalizar Construcción del Centro Espiritual Maama Kevina, en Nkokonjeru</b><div class="lugar">Lugazi · Uganda</div></td><td>Lugazi</td><td>Uganda</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11692</td><td><b>Taller de Informática para 30 jóvenes, en Bizoton</b><div class="lugar">Port-au-Prince · Haití</div></td><td>Port-au-Prince</td><td>Haití</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11691</td><td><b>Sistema de Energía Solar para la Parroquia</b><div class="lugar">Jacmel · Haití</div></td><td>Jacmel</td><td>Haití</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11690</td><td><b>Reparación del Techo de la Iglesia, en El Sombrero</b><div class="lugar">Calabozo · Venezuela</div></td><td>Calabozo</td><td>Venezuela</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11689</td><td><b>Construcción de un Residencia Sacerdotal</b><div class="lugar">Mwanza · Tanzania</div></td><td>Mwanza</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11688</td><td><b>Formación de Catequistas voluntarios</b><div class="lugar">Butare · Rwanda</div></td><td>Butare</td><td>Rwanda</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11687</td><td><b>Ampliación y renovación del centro escolar, en Pétion</b><div class="lugar">Port-au-Prince · Haití</div></td><td>Port-au-Prince</td><td>Haití</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="Registrado" data-continente="Asia">
+      <td class="num">11686</td><td><b>Construcción de baños y 3 habitaciones en la Residencia de Ancianos en Puduvadavalli</b><div class="lugar">Ootacamund · India</div></td><td>Ootacamund</td><td>India</td>
+      <td><span class="pill info">Registrado</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11685</td><td><b>Ampliación de aulas, baños y salas de las oficinas</b><div class="lugar">Benguela · Angola</div></td><td>Benguela</td><td>Angola</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11684</td><td><b>Finalizar los dormitorios Residencia femenina St. Mónica de Madaba</b><div class="lugar">Songea · Tanzania</div></td><td>Songea</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11683</td><td><b>Formación de Catequistas para la Parroquia de Loliondo</b><div class="lugar">Arusha · Tanzania</div></td><td>Arusha</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11682</td><td><b>Rehabilitación del convento de las religiosas de Tumba</b><div class="lugar">Butare · Rwanda</div></td><td>Butare</td><td>Rwanda</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11681</td><td><b>Motos para la coordinación de las Escuela Católicas diocesanas</b><div class="lugar">Isangi · Rep. Dem. del Congo</div></td><td>Isangi</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11680</td><td><b>Formación integral y pastoral de jóvenes universitarios diocesanos</b><div class="lugar">Cuenca · Ecuador</div></td><td>Cuenca</td><td>Ecuador</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11679</td><td><b>Rehabilitar y ampliar la Casa Parroquial de Nindo</b><div class="lugar">Shinyanga · Tanzania</div></td><td>Shinyanga</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11678</td><td><b>Formación de Catequistas en protección infantil, de jovenes y de mujeres</b><div class="lugar">Morogoro · Tanzania</div></td><td>Morogoro</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11677</td><td><b>Vehículo para la actividad de Cáritas Diocesana</b><div class="lugar">Arua · Uganda</div></td><td>Arua</td><td>Uganda</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11676</td><td><b>Construcción Complejo Parroquial: Iglesia, Casa, Salones, Columbario. Virgen de la Paz</b><div class="lugar">Callao · Perú</div></td><td>Callao</td><td>Perú</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="Asia">
+      <td class="num">11675</td><td><b>Vehículo para actividades pastorales de las religiosas, en Panruti</b><div class="lugar">Pondicherry y Cuddalore · India</div></td><td>Pondicherry y Cuddalore</td><td>India</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="Asia">
+      <td class="num">11674</td><td><b>Formación de mujeres marginadas</b><div class="lugar">Nalgonda · India</div></td><td>Nalgonda</td><td>India</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11673</td><td><b>Construcción Complejo Deportivo de formación y orientación de jóvenes</b><div class="lugar">Gitega · Burundi</div></td><td>Gitega</td><td>Burundi</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11672</td><td><b>Rehabilitar los baños de internado &quot;Beata María Pilar&quot;</b><div class="lugar">Maputo · Mozambique</div></td><td>Maputo</td><td>Mozambique</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11670</td><td><b>Construcción de la nueva Iglesia de Moku</b><div class="lugar">Isiro-Niangara · Rep. Dem. del Congo</div></td><td>Isiro-Niangara</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11669</td><td><b>Apoyo pastoral y material para los seminaristas</b><div class="lugar">Isiro-Niangara · Rep. Dem. del Congo</div></td><td>Isiro-Niangara</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11668</td><td><b>Motos para la pastoral misionera diocesana</b><div class="lugar">Isiro-Niangara · Rep. Dem. del Congo</div></td><td>Isiro-Niangara</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="Sin ayuda" data-continente="América">
+      <td class="num">11667</td><td><b>Construcción Hogar Sacerdotal (Fase III)</b><div class="lugar">Córdoba · Argentina</div></td><td>Córdoba</td><td>Argentina</td>
+      <td><span class="pill mut">Sin ayuda</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11666</td><td><b>Formación de Profesores de Religión sobre el Plan Pastoral Diocesano</b><div class="lugar">Chuquibamba · Perú</div></td><td>Chuquibamba</td><td>Perú</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11665</td><td><b>Plan de Formación, discernimiento y participación de los jóvenes</b><div class="lugar">Tacna y Moquegua · Perú</div></td><td>Tacna y Moquegua</td><td>Perú</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11664</td><td><b>Sistema de Energía Solar para Electricidad del Convento de Religiosas</b><div class="lugar">Kenge · Rep. Dem. del Congo</div></td><td>Kenge</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11663</td><td><b>Finalización del Convento de las Religiosas de Kwango</b><div class="lugar">Kenge · Rep. Dem. del Congo</div></td><td>Kenge</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11662</td><td><b>Formación de los Equipos de Pastoral Escolar</b><div class="lugar">Tacna y Moquegua · Perú</div></td><td>Tacna y Moquegua</td><td>Perú</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="Asia">
+      <td class="num">11661</td><td><b>Renovación del Centro de Formación Diocesano - HASSS</b><div class="lugar">Hyderabad · India</div></td><td>Hyderabad</td><td>India</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="Asia">
+      <td class="num">11660</td><td><b>Subvención de Estudios a niños dalit en situación de pobreza</b><div class="lugar">Dindigul · India</div></td><td>Dindigul</td><td>India</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="Asia">
+      <td class="num">11659</td><td><b>Construcción Iglesia de Arogyamata, Moss Colony</b><div class="lugar">Hyderabad · India</div></td><td>Hyderabad</td><td>India</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11657</td><td><b>Vehículo para la pastoral parroquial</b><div class="lugar">Sumbe · Angola</div></td><td>Sumbe</td><td>Angola</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11656</td><td><b>Vehículo para la pastoral diocesana</b><div class="lugar">Sumbe · Angola</div></td><td>Sumbe</td><td>Angola</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11655</td><td><b>Reparación del Techo de la Casa Parroquial de “San Rafael Arcángel”, Playa Grande, Estado Sucre Venezuela.</b><div class="lugar">Carúpano · Venezuela</div></td><td>Carúpano</td><td>Venezuela</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11654</td><td><b>Comprar Ornamentos y Vestimentas Litúrgicos para zonas rurales</b><div class="lugar">Morogoro · Tanzania</div></td><td>Morogoro</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11653</td><td><b>Formación Técnica de Jóvenes Seminaristas, en Pandiassou</b><div class="lugar">Hinche · Haití</div></td><td>Hinche</td><td>Haití</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11652</td><td><b>Finalizar Construcción Dormitorios para Peregrinos, en Indriani</b><div class="lugar">Arua · Uganda</div></td><td>Arua</td><td>Uganda</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11651</td><td><b>Vehículo para las actividades pastorales en la Parroquia de Busheeka</b><div class="lugar">Masaka · Uganda</div></td><td>Masaka</td><td>Uganda</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="Asia">
+      <td class="num">11649</td><td><b>Construcción Residencia Sacerdotal (2 pisos), en Narikelbari</b><div class="lugar">Barishal · Bangladesh</div></td><td>Barishal</td><td>Bangladesh</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="Asia">
+      <td class="num">11648</td><td><b>Constucción de Centro Educativo (Fase 1) para Jovenes y Seminaristas en Maloa-Ailoklaran</b><div class="lugar">Dili · Timor-Leste</div></td><td>Dili</td><td>Timor-Leste</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11647</td><td><b>Construcción Residencia Femenina en Escuela Secundaria, en Lukuledi</b><div class="lugar">Tunduru-Masasi · Tanzania</div></td><td>Tunduru-Masasi</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11646</td><td><b>Construcción del Tejado de la Iglesia de Poggy</b><div class="lugar">Anse-à-Veau et Miragoâne · Haití</div></td><td>Anse-à-Veau et Miragoâne</td><td>Haití</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11644</td><td><b>Formación Pastoral para líderes laicos cristianos en la vida pública</b><div class="lugar">Santiago de Chile · Chile</div></td><td>Santiago de Chile</td><td>Chile</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="Registrado" data-continente="África">
+      <td class="num">11643</td><td><b>Oficinas y taller de costura para las Religiosas (Fase 2), de Makamba</b><div class="lugar">Bururi · Burundi</div></td><td>Bururi</td><td>Burundi</td>
+      <td><span class="pill info">Registrado</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11642</td><td><b>Construcción y Equipamiento de Baño y Comedor del Hogar Sacerdotal (Fase 3)</b><div class="lugar">Córdoba · Argentina</div></td><td>Córdoba</td><td>Argentina</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="Asia">
+      <td class="num">11641</td><td><b>Construcción de la Iglesia en Miriyalaguda</b><div class="lugar">Nalgonda · India</div></td><td>Nalgonda</td><td>India</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11640</td><td><b>Formación de agentes de Pastoral</b><div class="lugar">Palmira · Colombia</div></td><td>Palmira</td><td>Colombia</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11638</td><td><b>Formación de Agentes de Pastoral Matrimonial diocesana</b><div class="lugar">Ruhengeri · Rwanda</div></td><td>Ruhengeri</td><td>Rwanda</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11637</td><td><b>Motos (10) para Actividades Pastorales de los Catequistas</b><div class="lugar">Pankshin · Nigeria</div></td><td>Pankshin</td><td>Nigeria</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11636</td><td><b>Muro para el Centro de Salud y la Casa de las Religiosas, en Molo</b><div class="lugar">Nakuru · Kenia</div></td><td>Nakuru</td><td>Kenia</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11635</td><td><b>Programa de Formación para mujeres vulnerables de la diócesis</b><div class="lugar">Homa Bay · Kenia</div></td><td>Homa Bay</td><td>Kenia</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11634</td><td><b>Beca para Master en Gestión de Doctrina Social de la Iglesia en Francia</b><div class="lugar">Anse-à-Veau et Miragoâne · Haití</div></td><td>Anse-à-Veau et Miragoâne</td><td>Haití</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11633</td><td><b>Construcción de un Salón Parroquial Mutiusos, en Savelugu</b><div class="lugar">Tamale · Ghana</div></td><td>Tamale</td><td>Ghana</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11632</td><td><b>Formación de Catequistas</b><div class="lugar">N&#39;Dali · Benín</div></td><td>N&#39;Dali</td><td>Benín</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11629</td><td><b>Construcción de Residencia para los PP. Franciscanos, en Inhassunge</b><div class="lugar">Quelimane · Mozambique</div></td><td>Quelimane</td><td>Mozambique</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11628</td><td><b>Becas de formación (4) en Benin para PP. Franciscanos</b><div class="lugar">Quelimane · Mozambique</div></td><td>Quelimane</td><td>Mozambique</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11627</td><td><b>Construcción de Muro para la Casa sacerdotal, en Igagala</b><div class="lugar">Tabora · Tanzania</div></td><td>Tabora</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11626</td><td><b>Vehículo para actividades sociales y pastorales, en Mbarali</b><div class="lugar">Mafinga · Tanzania</div></td><td>Mafinga</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11625</td><td><b>Vehículo para actividades sociales y pastorales, en Mgama</b><div class="lugar">Iringa · Tanzania</div></td><td>Iringa</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11624</td><td><b>Contrucción del Tejado de la Iglesia, en Ikonya</b><div class="lugar">Mbeya · Tanzania</div></td><td>Mbeya</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11622</td><td><b>Mejorar la Organización Pastoral de Jóvenes Catequistas, en Paki Masabong</b><div class="lugar">Makeni · Sierra Leona</div></td><td>Makeni</td><td>Sierra Leona</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="Registrado" data-continente="África">
+      <td class="num">11621</td><td><b>Construcción de Muro para el Centro Escolar María Reina</b><div class="lugar">Buta · Rep. Dem. del Congo</div></td><td>Buta</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill info">Registrado</span></td></tr>
+<tr data-estado="En estudio" data-continente="Asia">
+      <td class="num">11620</td><td><b>Construcción de dos aulas para niños de zonas rurales, en Aniyappur</b><div class="lugar">Tiruchirappalli · India</div></td><td>Tiruchirappalli</td><td>India</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="Asia">
+      <td class="num">11619</td><td><b>Construcción de un Salón Comunitario, en Peddagopathi</b><div class="lugar">Khammam · India</div></td><td>Khammam</td><td>India</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11618</td><td><b>Construcción Depósito y Canalizar Agua para la casa de religiosos</b><div class="lugar">Addis Ababa · Etiopía</div></td><td>Addis Ababa</td><td>Etiopía</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11617</td><td><b>Rehabilitación y Equipamiento de la Casa de las Religiosas, Bulo Bulo</b><div class="lugar">Aiquile · Bolivia</div></td><td>Aiquile</td><td>Bolivia</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11616</td><td><b>Construcción de Muro para la Parroquia</b><div class="lugar">Kwito-Bié · Angola</div></td><td>Kwito-Bié</td><td>Angola</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="Sin ayuda" data-continente="África">
+      <td class="num">11615</td><td><b>Adquisición de motocicletas para los sacerdotes</b><div class="lugar">Kenge · Rep. Dem. del Congo</div></td><td>Kenge</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill mut">Sin ayuda</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11614</td><td><b>Sistema de Energía Solar y Equipo Sonido para la Parroquia</b><div class="lugar">Huambo · Angola</div></td><td>Huambo</td><td>Angola</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11611</td><td><b>Campamentos para niños y jovenes en riesgo de exclusión social</b><div class="lugar">Port-au-Prince · Haití</div></td><td>Port-au-Prince</td><td>Haití</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11610</td><td><b>Construcción del Convento de las Hermanas (Bloque B)</b><div class="lugar">Butembo-Beni · Rep. Dem. del Congo</div></td><td>Butembo-Beni</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11609</td><td><b>Iluminación del Centro de Formación Profesional, de Busangana</b><div class="lugar">Bujumbura · Burundi</div></td><td>Bujumbura</td><td>Burundi</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11608</td><td><b>Finalizar construcción de Capilla de los religiosos, en Mlangarini</b><div class="lugar">Arusha · Tanzania</div></td><td>Arusha</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11607</td><td><b>Vehículo para las actividades pastorales de la Catedral</b><div class="lugar">Tunduru-Masasi · Tanzania</div></td><td>Tunduru-Masasi</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11606</td><td><b>Creación de Comités de Protección Infantil (CPCs) en las Parroquias</b><div class="lugar">Iringa · Tanzania</div></td><td>Iringa</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11605</td><td><b>Formación religiosa de las jóvenes de la diocesis</b><div class="lugar">Moramanga · Madagascar</div></td><td>Moramanga</td><td>Madagascar</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11604</td><td><b>Comprar máquina bordadora para el monasterio Juja</b><div class="lugar">Nairobi · Kenia</div></td><td>Nairobi</td><td>Kenia</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11603</td><td><b>Plan de Formación de jóvenes en riesgo de exclusión social, en Itauguá</b><div class="lugar">San Lorenzo · Paraguay</div></td><td>San Lorenzo</td><td>Paraguay</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11602</td><td><b>Construcción del Hospital de Padre Pío, en Juja</b><div class="lugar">Nairobi · Kenia</div></td><td>Nairobi</td><td>Kenia</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11601</td><td><b>Formación bíbllica y litúrgica para jóvenes de la Parroquia, en Létiro</b><div class="lugar">Cap-Haïtien · Haití</div></td><td>Cap-Haïtien</td><td>Haití</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11600</td><td><b>Cercado de fachada principal y suelo de oficina de la Iglesia</b><div class="lugar">Fort-Liberté · Haití</div></td><td>Fort-Liberté</td><td>Haití</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="Sin ayuda" data-continente="África">
+      <td class="num">11599</td><td><b>Finalizar la Iglesia de Fimbo</b><div class="lugar">Mahenge · Tanzania</div></td><td>Mahenge</td><td>Tanzania</td>
+      <td><span class="pill mut">Sin ayuda</span></td></tr>
+<tr data-estado="En estudio" data-continente="Europa">
+      <td class="num">11598</td><td><b>Construcción de la Casa Parroquial, en Kholmok</b><div class="lugar">Mukachevo · Ucrania</div></td><td>Mukachevo</td><td>Ucrania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11597</td><td><b>Plan Diocesano de Formación de Pastoral Penitenciacia</b><div class="lugar">Chimoio · Mozambique</div></td><td>Chimoio</td><td>Mozambique</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11596</td><td><b>Comprar bancos para la Iglesia Parroquial de Sengerema</b><div class="lugar">Geita · Tanzania</div></td><td>Geita</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11595</td><td><b>Rehabilitar la Iglesia, en Kaning&#39;ombe</b><div class="lugar">Iringa · Tanzania</div></td><td>Iringa</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11594</td><td><b>Rehabilitar el Centro de Salud en Ngokolo</b><div class="lugar">Shinyanga · Tanzania</div></td><td>Shinyanga</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="Asia">
+      <td class="num">11593</td><td><b>Mejorar las infraestructuras del Seminario</b><div class="lugar">Madurai · India</div></td><td>Madurai</td><td>India</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="Sin ayuda" data-continente="Asia">
+      <td class="num">11592</td><td><b>Rehabilitar Centro de Formación HASSS y Oficinas del Arzobispado</b><div class="lugar">Hyderabad · India</div></td><td>Hyderabad</td><td>India</td>
+      <td><span class="pill mut">Sin ayuda</span></td></tr>
+<tr data-estado="En estudio" data-continente="Asia">
+      <td class="num">11591</td><td><b>Construcción de Centro de Formación para Mujeres, en Kanchikacherla</b><div class="lugar">Vijayawada · India</div></td><td>Vijayawada</td><td>India</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11590</td><td><b>Vehículo para la pastoral de los Focolares</b><div class="lugar">Medellín · Colombia</div></td><td>Medellín</td><td>Colombia</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11589</td><td><b>Atención social y pastoral de familia misionera, en Contagem</b><div class="lugar">Belo Horizonte · Brasil</div></td><td>Belo Horizonte</td><td>Brasil</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11588</td><td><b>Finalizar Construcción de la Casa Sacerdotal, en Kirowooza</b><div class="lugar">Masaka · Uganda</div></td><td>Masaka</td><td>Uganda</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11586</td><td><b>Vehículo para la pastoral de la Parroquia, en Koumogo</b><div class="lugar">Sarh · Chad</div></td><td>Sarh</td><td>Chad</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11585</td><td><b>Rehabilitar la Casa sacerdotal, en Matombo</b><div class="lugar">Morogoro · Tanzania</div></td><td>Morogoro</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11584</td><td><b>Vehículo para las actividades misioneras y pastorales de las Hermanas, en Ankavandra</b><div class="lugar">Tsiroanomandidy · Madagascar</div></td><td>Tsiroanomandidy</td><td>Madagascar</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11583</td><td><b>Restauración de la Iglesia, en Plaisance des Nippes</b><div class="lugar">Anse-à-Veau et Miragoâne · Haití</div></td><td>Anse-à-Veau et Miragoâne</td><td>Haití</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11582</td><td><b>Construcción Módulo de Aulas para Profesionalizacion Tecnica</b><div class="lugar">La Guaira · Venezuela</div></td><td>La Guaira</td><td>Venezuela</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11581</td><td><b>Salones para catequesis</b><div class="lugar">Machiques · Venezuela</div></td><td>Machiques</td><td>Venezuela</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11580</td><td><b>Construcción de Casa de Formación, en Ociba</b><div class="lugar">Arua · Uganda</div></td><td>Arua</td><td>Uganda</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11579</td><td><b>Mejorar la prestación de servicios del Centro de Salud, en Orussi</b><div class="lugar">Nebbi · Uganda</div></td><td>Nebbi</td><td>Uganda</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11578</td><td><b>Instalación de Energía Solar en el Convento de las Hermanas, en Bushangaro</b><div class="lugar">Kayanga · Tanzania</div></td><td>Kayanga</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11577</td><td><b>Continuar la construcción de la iglesia parroquial en Lupiro</b><div class="lugar">Mahenge · Tanzania</div></td><td>Mahenge</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11576</td><td><b>Pozo para la Comunidad Parroquial, en Iwambi</b><div class="lugar">Mbeya · Tanzania</div></td><td>Mbeya</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="Registrado" data-continente="África">
+      <td class="num">11575</td><td><b>Vehículo agrícola para el Convento, en Kankwale</b><div class="lugar">Sumbawanga · Tanzania</div></td><td>Sumbawanga</td><td>Tanzania</td>
+      <td><span class="pill info">Registrado</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11574</td><td><b>Formación integral de niños y jovenes a través del deporte, en Mizani</b><div class="lugar">Singida · Tanzania</div></td><td>Singida</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11573</td><td><b>Construcción de viviendas para Catequistas, en Bwawani</b><div class="lugar">Bagamoyo · Tanzania</div></td><td>Bagamoyo</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11572</td><td><b>Formación de Catequistas para la Parroquia de Dungunyi</b><div class="lugar">Singida · Tanzania</div></td><td>Singida</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11571</td><td><b>Finalizar (Fase III) la construcción de la Iglesia de Birehe</b><div class="lugar">Kabgayi · Rwanda</div></td><td>Kabgayi</td><td>Rwanda</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11569</td><td><b>Finalizar Construcción Complejo Catequético Parroquial, en Namianda</b><div class="lugar">Uvira · Rep. Dem. del Congo</div></td><td>Uvira</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11568</td><td><b>Construcción Muro para el Convento de religiosas</b><div class="lugar">Kamina · Rep. Dem. del Congo</div></td><td>Kamina</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11567</td><td><b>Construcción del Muro para el cementerio de religiosos y religiosas</b><div class="lugar">Kisantu · Rep. Dem. del Congo</div></td><td>Kisantu</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11566</td><td><b>Construcción de la Iglesia Beato Bakanja</b><div class="lugar">Kikwit · Rep. Dem. del Congo</div></td><td>Kikwit</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11565</td><td><b>Rehabilitar techos del Salon Parroquial</b><div class="lugar">Trujillo · Perú</div></td><td>Trujillo</td><td>Perú</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11564</td><td><b>Construcción Muro para la Casa Hogar María del Refugio</b><div class="lugar">Pemba · Mozambique</div></td><td>Pemba</td><td>Mozambique</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="Asia">
+      <td class="num">11563</td><td><b>Construcción de Salón Comunitario, en Moturu</b><div class="lugar">Vijayawada · India</div></td><td>Vijayawada</td><td>India</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11562</td><td><b>Rehabilitación de la Iglesia de Lopineau, en Fond Cochon</b><div class="lugar">Jérémie · Haití</div></td><td>Jérémie</td><td>Haití</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11561</td><td><b>Continuar Construcción de la Iglesia, en Plaine de Baconnois</b><div class="lugar">Anse-à-Veau et Miragoâne · Haití</div></td><td>Anse-à-Veau et Miragoâne</td><td>Haití</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11560</td><td><b>Construcción de Salas de Catequesis, en San Plácido</b><div class="lugar">Portoviejo · Ecuador</div></td><td>Portoviejo</td><td>Ecuador</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11559</td><td><b>Construcción de internado para Centro Escolar, en N&#39;dingtire</b><div class="lugar">Garoua · Camerún</div></td><td>Garoua</td><td>Camerún</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11557</td><td><b>Rehabilitación y equipamiento del secretariado diocesano</b><div class="lugar">Isiro-Niangara · Rep. Dem. del Congo</div></td><td>Isiro-Niangara</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11556</td><td><b>Construcción y equipamiento de la casa parroquial, en Muyuga</b><div class="lugar">Gitega · Burundi</div></td><td>Gitega</td><td>Burundi</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11555</td><td><b>Finalizar construcción del Muro e interior de la Parroquia, de Nyadri</b><div class="lugar">Arua · Uganda</div></td><td>Arua</td><td>Uganda</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11554</td><td><b>Contrucción 3 Edificios de Aulas y Oficinas parroquiales, en Melela</b><div class="lugar">Morogoro · Tanzania</div></td><td>Morogoro</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11553</td><td><b>Sistema de Energia Solar para el Obispado</b><div class="lugar">Wukari · Nigeria</div></td><td>Wukari</td><td>Nigeria</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11552</td><td><b>Promoción de Actividades Pastorales y Sociales de las Hermanas</b><div class="lugar">Quelimane · Mozambique</div></td><td>Quelimane</td><td>Mozambique</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11551</td><td><b>Vehículo para las actividades pastorales del Seminario Menor</b><div class="lugar">Kakamega · Kenia</div></td><td>Kakamega</td><td>Kenia</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="Asia">
+      <td class="num">11550</td><td><b>Rehabilitación del Convento de las Hermanas, en Ranipuram</b><div class="lugar">Warangal · India</div></td><td>Warangal</td><td>India</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11548</td><td><b>Rehabilitación de la Cubierta del Seminario Mayor de Teología</b><div class="lugar">Kinshasa · Rep. Dem. del Congo</div></td><td>Kinshasa</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="Asia">
+      <td class="num">11547</td><td><b>Construcción de Residencia Sacerdotal, en Sathyamangalam</b><div class="lugar">Ootacamund · India</div></td><td>Ootacamund</td><td>India</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11546</td><td><b>Formación Ingegral de Seminaristas</b><div class="lugar">Engativá · Colombia</div></td><td>Engativá</td><td>Colombia</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11545</td><td><b>Finalizar el edificio parroquial de Attoban</b><div class="lugar">Abidjan · Costa de Marfil</div></td><td>Abidjan</td><td>Costa de Marfil</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="Registrado" data-continente="África">
+      <td class="num">11544</td><td><b>Pozo para Centro de Formación de Niños</b><div class="lugar">Kampala · Uganda</div></td><td>Kampala</td><td>Uganda</td>
+      <td><span class="pill info">Registrado</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11543</td><td><b>Fortalecimiento Pastoral Parroquial: Matrimonios, Liturgia y Enfermos</b><div class="lugar">Dar Es Salam · Tanzania</div></td><td>Dar Es Salam</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="Registrado" data-continente="África">
+      <td class="num">11542</td><td><b>Construcción de Huerto, granja y Muro para la Parroquia</b><div class="lugar">Sumbawanga · Tanzania</div></td><td>Sumbawanga</td><td>Tanzania</td>
+      <td><span class="pill info">Registrado</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11541</td><td><b>Construcción de Pista Deportiva en el Seminario Mayor</b><div class="lugar">Kasongo · Rep. Dem. del Congo</div></td><td>Kasongo</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11540</td><td><b>Vehículo para la pastoral de la Parroquia, Bambama</b><div class="lugar">Nkayi · Rep. del Congo</div></td><td>Nkayi</td><td>Rep. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="Asia">
+      <td class="num">11539</td><td><b>Construcción del Convento de las Hermanas, en Chennai</b><div class="lugar">Madras Mylapore · India</div></td><td>Madras Mylapore</td><td>India</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11538</td><td><b>Rehabilitación del Seminario Mayor S. Martin de Porres</b><div class="lugar">Chosica · Perú</div></td><td>Chosica</td><td>Perú</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11537</td><td><b>Rehabilitación de la Casa Parroquial, en Cuale</b><div class="lugar">Malanje · Angola</div></td><td>Malanje</td><td>Angola</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11536</td><td><b>Construcción de la Iglesia St.Gerard Majella, en Didon</b><div class="lugar">Jérémie · Haití</div></td><td>Jérémie</td><td>Haití</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11535</td><td><b>Vehículo para la pastoral de la Parroquia, en Nkol Melen</b><div class="lugar">Yaoundé · Camerún</div></td><td>Yaoundé</td><td>Camerún</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11534</td><td><b>Fortalecimiento de la Pastoral de las Comunidades rurales</b><div class="lugar">Manaus · Brasil</div></td><td>Manaus</td><td>Brasil</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11533</td><td><b>Construcción de dos salas para la Parroquia, en Gbanlin</b><div class="lugar">Dassa-Zoumé · Benín</div></td><td>Dassa-Zoumé</td><td>Benín</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11532</td><td><b>Renovar la residencia de sacerdotes en Jajura</b><div class="lugar">Hosanna · Etiopía</div></td><td>Hosanna</td><td>Etiopía</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11531</td><td><b>Creación de una unidad avícola en el convento de Mt. Alvena, Pamba, ciudad de Soroti.</b><div class="lugar">Soroti · Uganda</div></td><td>Soroti</td><td>Uganda</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11530</td><td><b>Construcción de la iglesia parroquial Virgen María en Bonnay Dugal</b><div class="lugar">Cap-Haïtien · Haití</div></td><td>Cap-Haïtien</td><td>Haití</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="Europa">
+      <td class="num">11529</td><td><b>Acumuladores de energia para la parroquia Santo Espiritu</b><div class="lugar">Kamyanets-Podilskyi · Ucrania</div></td><td>Kamyanets-Podilskyi</td><td>Ucrania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11528</td><td><b>Restauración de la techumbre de la iglesia de Duverger</b><div class="lugar">Anse-à-Veau et Miragoâne · Haití</div></td><td>Anse-à-Veau et Miragoâne</td><td>Haití</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11526</td><td><b>Construcción del presbiterio en la parroquia Darghe Holy Saviour</b><div class="lugar">Emdeber · Etiopía</div></td><td>Emdeber</td><td>Etiopía</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11519</td><td><b>Remodelación del techo de la Parroquia San José Obrero</b><div class="lugar">Puerto Gaitán · Colombia</div></td><td>Puerto Gaitán</td><td>Colombia</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11510</td><td><b>Fortalecimiento de la comunicación y la evangelización digital</b><div class="lugar">Caracas · Venezuela</div></td><td>Caracas</td><td>Venezuela</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11508</td><td><b>Formación permanente para el clero diocesano</b><div class="lugar">San Fernando de Apure · Venezuela</div></td><td>San Fernando de Apure</td><td>Venezuela</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11507</td><td><b>Plan diocesano de pastoral</b><div class="lugar">San Fernando de Apure · Venezuela</div></td><td>San Fernando de Apure</td><td>Venezuela</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11490</td><td><b>Construcción Presbiterio de la Iglesia, en Port Kwango</b><div class="lugar">Kenge · Rep. Dem. del Congo</div></td><td>Kenge</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11484</td><td><b>Rehabilitación del Convento de las religiosas, en Namur</b><div class="lugar">Kikwit · Rep. Dem. del Congo</div></td><td>Kikwit</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11483</td><td><b>Continuar la Construcción de la Iglesia, en Kiomi.</b><div class="lugar">Tshumbe · Rep. Dem. del Congo</div></td><td>Tshumbe</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="Asia">
+      <td class="num">11477</td><td><b>Construcción de saneamientos para peregrinos</b><div class="lugar">Rajshahi · Bangladesh</div></td><td>Rajshahi</td><td>Bangladesh</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11460</td><td><b>Rehabilitar salón del Seminiario y residencia sacerdotal, Mabanga</b><div class="lugar">Bungoma · Kenia</div></td><td>Bungoma</td><td>Kenia</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11455</td><td><b>Rehabilitación de la residencia parroquial de ancianos, en Ngidinga</b><div class="lugar">Kisantu · Rep. Dem. del Congo</div></td><td>Kisantu</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11439</td><td><b>Construcción del tejado de la Iglesia, en Lukande</b><div class="lugar">Mahenge · Tanzania</div></td><td>Mahenge</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11430</td><td><b>Acondicionamiento del Salón Parroquial y Sacristía, El Manteco</b><div class="lugar">Ciudad Guayana · Venezuela</div></td><td>Ciudad Guayana</td><td>Venezuela</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11429</td><td><b>Rehabilitación del auditorio del Instituto</b><div class="lugar">Coro · Venezuela</div></td><td>Coro</td><td>Venezuela</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11425</td><td><b>Rehabilitación de la Casa de Formación de los Religiosos</b><div class="lugar">Jérémie · Haití</div></td><td>Jérémie</td><td>Haití</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11422</td><td><b>Equipación de la biblioteca del seminario interdiocesano</b><div class="lugar">Carúpano · Venezuela</div></td><td>Carúpano</td><td>Venezuela</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11421</td><td><b>Rehabilitación del Edificio de la Curia Diocesana</b><div class="lugar">Ciudad Guayana · Venezuela</div></td><td>Ciudad Guayana</td><td>Venezuela</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11408</td><td><b>Vehículo para la Parroquia de Sonsoro</b><div class="lugar">Kandi · Benín</div></td><td>Kandi</td><td>Benín</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11406</td><td><b>Construcción del interior de la iglesia San José de Carcasse</b><div class="lugar">Jérémie · Haití</div></td><td>Jérémie</td><td>Haití</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11396</td><td><b>Equipamiento de sacristía y baños de la Catedral</b><div class="lugar">Kikwit · Rep. Dem. del Congo</div></td><td>Kikwit</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11393</td><td><b>Construcción de Centro Pastoral y Cultural Infantil</b><div class="lugar">Sohag · Egipto</div></td><td>Sohag</td><td>Egipto</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11384</td><td><b>Rehabilitar Cocina, Comedor y otras estancias del Seminario</b><div class="lugar">Puno · Perú</div></td><td>Puno</td><td>Perú</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11383</td><td><b>Construcción de Capilla Divina Misericordia en Nueva Tacabamba</b><div class="lugar">Moyobamba · Perú</div></td><td>Moyobamba</td><td>Perú</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11375</td><td><b>Vehículo para la Pastoral Social de la diócesis</b><div class="lugar">El Tigre · Venezuela</div></td><td>El Tigre</td><td>Venezuela</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11373</td><td><b>Rehabilitación de la escuela parroquial San Andrés, en Grand-Hatte</b><div class="lugar">Gonaïves · Haití</div></td><td>Gonaïves</td><td>Haití</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11371</td><td><b>Construcción de salas para catequistas</b><div class="lugar">Shinyanga · Tanzania</div></td><td>Shinyanga</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11351</td><td><b>Construcción de la Iglesia parroquial de Fond Rouge d&#39;Ayer</b><div class="lugar">Jérémie · Haití</div></td><td>Jérémie</td><td>Haití</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11350</td><td><b>Mejorar Seguridad del Seminario Menor y del Centro de Formación Pastoral</b><div class="lugar">Jimma-Bonga · Etiopía</div></td><td>Jimma-Bonga</td><td>Etiopía</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="Registrado" data-continente="África">
+      <td class="num">11342</td><td><b>Construcción del tejado de la Iglesia, en Walusubi</b><div class="lugar">Lugazi · Uganda</div></td><td>Lugazi</td><td>Uganda</td>
+      <td><span class="pill info">Registrado</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11338</td><td><b>Motos para las distintas Parroquias de la Diócesis.</b><div class="lugar">Kisangani · Rep. Dem. del Congo</div></td><td>Kisangani</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11332</td><td><b>Fortalecimiento de la Pastoral Familiar, en Perico</b><div class="lugar">Matanzas · Cuba</div></td><td>Matanzas</td><td>Cuba</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11330</td><td><b>Rehabilitar la Casa Sacerdotal, en Adjumani.</b><div class="lugar">Arua · Uganda</div></td><td>Arua</td><td>Uganda</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11322</td><td><b>Vehículo para el Seminario Mayor de Koumi</b><div class="lugar">Bobo-Dioulasso · Burkina Faso</div></td><td>Bobo-Dioulasso</td><td>Burkina Faso</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11317</td><td><b>Formación de jóvenes animadores de Young Caritas para la diócesis</b><div class="lugar">San Ramón · Perú</div></td><td>San Ramón</td><td>Perú</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11306</td><td><b>Rehabilitar la Iglesia parroquial, en Miheta/MC Kasa</b><div class="lugar">Kikwit · Rep. Dem. del Congo</div></td><td>Kikwit</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11293</td><td><b>Vehículo para la pastoral vocacional diocesana</b><div class="lugar">Mérida · Venezuela</div></td><td>Mérida</td><td>Venezuela</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11292</td><td><b>Vehículo para el Seminario S.Buenaventura</b><div class="lugar">Mérida · Venezuela</div></td><td>Mérida</td><td>Venezuela</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11276</td><td><b>Ornamentos y libros litúrgicos actualizados para la Catedral</b><div class="lugar">Bata · Guinea Ecuatorial</div></td><td>Bata</td><td>Guinea Ecuatorial</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11274</td><td><b>Sistema fotovoltaico para la iglesia de Ntra. Sra. de la Caridad</b><div class="lugar">La Habana · Cuba</div></td><td>La Habana</td><td>Cuba</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11259</td><td><b>Rehabilitar la Iglesia, en Galula</b><div class="lugar">Mbeya · Tanzania</div></td><td>Mbeya</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11256</td><td><b>Instalación Sistema Energía Solar en el Convento, en Mswiswi</b><div class="lugar">Mbeya · Tanzania</div></td><td>Mbeya</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11253</td><td><b>Construcción de Casa para las Religiosas, en Chansolme</b><div class="lugar">Port-de-Paix · Haití</div></td><td>Port-de-Paix</td><td>Haití</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11224</td><td><b>Vehículo para la Pastoral Diocesana de los Religiosos</b><div class="lugar">Lira · Uganda</div></td><td>Lira</td><td>Uganda</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11215</td><td><b>Construcción de iglesia St. Josephine Bakita en Parombo</b><div class="lugar">Nebbi · Uganda</div></td><td>Nebbi</td><td>Uganda</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11214</td><td><b>Rehabilitar el Salón Parroquial, en Zeu</b><div class="lugar">Nebbi · Uganda</div></td><td>Nebbi</td><td>Uganda</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11162</td><td><b>Ampliación del Centro Diocesano de Formación Pastoral</b><div class="lugar">Mzuzu · Malawi</div></td><td>Mzuzu</td><td>Malawi</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11159</td><td><b>Construcción de nueva Iglesia, en Sarmale</b><div class="lugar">Hawassa · Etiopía</div></td><td>Hawassa</td><td>Etiopía</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11129</td><td><b>Finalizar Construcción de Iglesia de Fimbo, en Indunda</b><div class="lugar">Mahenge · Tanzania</div></td><td>Mahenge</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="América">
+      <td class="num">11110</td><td><b>Equipamiento (Muebles y Madera) de la Iglesia, en La Caleta de Carquin</b><div class="lugar">Huacho · Perú</div></td><td>Huacho</td><td>Perú</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11094</td><td><b>Construir Infraestructura de Agua Potable para la Parroquia, en Milola-Ulanga</b><div class="lugar">Mahenge · Tanzania</div></td><td>Mahenge</td><td>Tanzania</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">11073</td><td><b>Vehículo para la pastoral de la Parroquia, en Namyeso Agro SS</b><div class="lugar">Lira · Uganda</div></td><td>Lira</td><td>Uganda</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+<tr data-estado="Registrado" data-continente="África">
+      <td class="num">11055</td><td><b>Construcción de la Iglesia en Mchangani</b><div class="lugar">Lindi · Tanzania</div></td><td>Lindi</td><td>Tanzania</td>
+      <td><span class="pill info">Registrado</span></td></tr>
+<tr data-estado="En estudio" data-continente="África">
+      <td class="num">10970</td><td><b>Vehículo para el Seminario San Agustín</b><div class="lugar">Molegbe · Rep. Dem. del Congo</div></td><td>Molegbe</td><td>Rep. Dem. del Congo</td>
+      <td><span class="pill warn">En estudio</span></td></tr>
+</tbody>
+</table>
+<div class="vacio" id="vacio" hidden>Ningún proyecto coincide con la búsqueda.</div>
+</div>
+<footer><span id="total">388</span> proyectos · Actualizado el 22 de octubre de 2026</footer>
+</div>
+<script>
+(() => {
+  const filas = [...document.querySelectorAll('tbody tr')];
+  const q = document.getElementById('q'), cont = document.getElementById('continente');
+  const botones = [...document.querySelectorAll('[data-filtro]')];
+  let estado = '';
+  const norm = (s) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  function aplicar() {
+    const t = norm(q.value.trim()); let n = 0;
+    for (const f of filas) {
+      const ver = (!estado || f.dataset.estado === estado) && (!cont.value || f.dataset.continente === cont.value) && (!t || norm(f.textContent).includes(t));
+      f.hidden = !ver; if (ver) n++;
+    }
+    document.getElementById('total').textContent = n;
+    document.getElementById('vacio').hidden = n > 0;
+  }
+  for (const b of botones) b.addEventListener('click', () => {
+    estado = estado === b.dataset.filtro ? '' : b.dataset.filtro;
+    for (const x of botones) x.setAttribute('aria-pressed', String(x.dataset.filtro === estado));
+    aplicar();
+  });
+  q.addEventListener('input', aplicar); cont.addEventListener('change', aplicar);
+})();
+</script>
+</body>
+</html>
