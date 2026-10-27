@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fondo Nueva Evangelización · Proyectos</title>
 <meta name="description" content="Proyectos presentados al Fondo Nueva Evangelización y estado de su tramitación.">
-<meta name="huella" content="ed2df56da5e20b08ffc4f7ba5ff138a83ca29faf9f9c66fb0405c336d90218ef">
+<meta name="huella" content="4920a1de2c2a336a8fdcff15c6906a185765047c4da11dbf5a229fcf12cfefbb">
 <style>
 :root { --bg: #f4f6fb; --card: #fff; --line: #e3e8f1; --fg: #0f172a; --fg-2: #334155; --mut: #64748b; --acc: #4f46e5;
   --ok: #15803d; --ok-soft: #dcfce7; --warn: #b45309; --warn-soft: #fef3c7; --info: #0369a1; --info-soft: #e0f2fe;
@@ -70,7 +70,8 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
   <button class="estado" type="button" data-filtro="En estudio" aria-pressed="false"><span class="n">372</span><span class="pill warn">En estudio</span><small>El proyecto se estudia en el Fondo y su Comité Asesor hasta su resolución.</small></button>
   <button class="estado" type="button" data-filtro="Aprobado" aria-pressed="false"><span class="n">182</span><span class="pill ok">Aprobado</span><small>La ayuda está aprobada y en trámite de pago.</small></button>
   <button class="estado" type="button" data-filtro="Justificando" aria-pressed="false"><span class="n">0</span><span class="pill violet">Justificando</span><small>La ayuda se ha recibido; el proyecto está en marcha y pendiente de su informe final.</small></button>
-  <button class="estado" type="button" data-filtro="Cerrado" aria-pressed="false"><span class="n">77</span><span class="pill mut">Cerrado</span><small>Expediente terminado: justificado con su informe final, o denegado.</small></button>
+  <button class="estado" type="button" data-filtro="Cerrado" aria-pressed="false"><span class="n">0</span><span class="pill mut">Cerrado</span><small>Expediente terminado: justificado con su informe final.</small></button>
+  <button class="estado" type="button" data-filtro="Denegado" aria-pressed="false"><span class="n">77</span><span class="pill mut">Denegado</span><small>La solicitud se ha estudiado y no recibe ayuda.</small></button>
 </div>
 <div class="filtros">
   <input type="search" id="q" placeholder="Buscar por número, título, diócesis o país" aria-label="Buscar">
@@ -79,7 +80,7 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
 </div>
 <div class="tabla">
 <table>
-<thead><tr><th aria-sort="descending"><button type="button" data-orden="numero">Número</button></th><th>Proyecto</th><th><button type="button" data-orden="diocesis">Diócesis</button></th><th><button type="button" data-orden="pais">País</button></th><th><button type="button" data-orden="estado">Estado</button></th><th title="Reunión del Comité Asesor que estudia el proyecto">Resolución<select class="f-res th-sel" aria-label="Resolución"><option value="">Todos</option><option>octubre 2026</option><option>abril 2026</option><option>octubre 2025</option><option>abril 2025</option><option>octubre 2024</option><option>abril 2024</option></select></th><th title="Cantidad asignada sobre la solicitada, en lo aprobado">% asignado</th><th>Fecha de cierre</th></tr></thead>
+<thead><tr><th aria-sort="descending"><button type="button" data-orden="numero">Número</button></th><th>Proyecto</th><th><button type="button" data-orden="diocesis">Diócesis</button></th><th><button type="button" data-orden="pais">País</button></th><th><button type="button" data-orden="estado">Estado</button></th><th title="Reunión del Comité Asesor que estudia el proyecto">Resolución<select class="f-res th-sel" aria-label="Resolución"><option value="">Todos</option><option>octubre 2026</option><option>abril 2026</option><option>octubre 2025</option><option>abril 2025</option><option>octubre 2024</option><option>abril 2024</option></select></th><th title="Cantidad asignada sobre la solicitada, en lo aprobado">% asignado</th><th title="Mes en que se cerró el expediente">Cerrado</th></tr></thead>
 <tbody>
 <tr data-estado="En estudio" data-continente="África" data-numero="12097" data-resolucion="octubre 2026"
       data-diocesis="Mahagi-Nyoka" data-pais="Rep. Dem. del Congo" data-orden-estado="10">
@@ -1836,10 +1837,10 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td class="num"><a href="#11513" title="Enlace a este proyecto">11513</a></td><td><b>Renovación de la casa de formación</b><div class="lugar">Malabo · Guinea Ecuatorial</div></td><td>Malabo</td><td>Guinea Ecuatorial</td>
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 83 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">83 %</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="Asia" data-numero="11512" data-resolucion="abril 2026"
-      data-diocesis="Jerusalén" data-pais="Israel" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="Asia" data-numero="11512" data-resolucion="abril 2026"
+      data-diocesis="Jerusalén" data-pais="Israel" data-orden-estado="50">
       <td class="num"><a href="#11512" title="Enlace a este proyecto">11512</a></td><td><b>Rehabilitación del Hogar Nuestra Señora de los Dolores</b><div class="lugar">Jerusalén · Israel</div></td><td>Jerusalén</td><td>Israel</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="En estudio" data-continente="América" data-numero="11510" data-resolucion="octubre 2026"
       data-diocesis="Caracas" data-pais="Venezuela" data-orden-estado="10">
@@ -1881,50 +1882,50 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td class="num"><a href="#11500" title="Enlace a este proyecto">11500</a></td><td><b>Construcción de pozo y depósito de agua en Leboudi</b><div class="lugar">Obala · Camerún</div></td><td>Obala</td><td>Camerún</td>
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 75 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">75 %</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="11499" data-resolucion="abril 2026"
-      data-diocesis="Tunduru-Masasi" data-pais="Tanzania" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="11499" data-resolucion="abril 2026"
+      data-diocesis="Tunduru-Masasi" data-pais="Tanzania" data-orden-estado="50">
       <td class="num"><a href="#11499" title="Enlace a este proyecto">11499</a></td><td><b>Moto y bicicletas para actividades parroquiales en Hulia</b><div class="lugar">Tunduru-Masasi · Tanzania</div></td><td>Tunduru-Masasi</td><td>Tanzania</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Registrado" data-continente="África" data-numero="11498" data-resolucion="octubre 2026"
-      data-diocesis="Morogoro" data-pais="Tanzania" data-orden-estado="2">
+      data-diocesis="Morogoro" data-pais="Tanzania" data-orden-estado="1">
       <td class="num"><a href="#11498" title="Enlace a este proyecto">11498</a></td><td><b>Rehabilitación de la Casa Parroquial, en Ilonga</b><div class="lugar">Morogoro · Tanzania</div></td><td>Morogoro</td><td>Tanzania</td>
       <td><span class="pill info">Registrado</span><div class="motivo"><span class="pill warn">Pospuesto</span></div><div class="fechas">Resolución: octubre 2026</div></td>
       <td class="fecha">octubre 2026</td><td class="fecha">—</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="11497" data-resolucion="abril 2026"
-      data-diocesis="Mbujimayi" data-pais="Rep. Dem. del Congo" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="11497" data-resolucion="abril 2026"
+      data-diocesis="Mbujimayi" data-pais="Rep. Dem. del Congo" data-orden-estado="50">
       <td class="num"><a href="#11497" title="Enlace a este proyecto">11497</a></td><td><b>Rehabilitación del Presbiterio de la Iglesia, en Cyaba</b><div class="lugar">Mbujimayi · Rep. Dem. del Congo</div></td><td>Mbujimayi</td><td>Rep. Dem. del Congo</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
-<tr data-estado="Cerrado" data-continente="Asia" data-numero="11496" data-resolucion="abril 2026"
-      data-diocesis="Vijayawada" data-pais="India" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="Asia" data-numero="11496" data-resolucion="abril 2026"
+      data-diocesis="Vijayawada" data-pais="India" data-orden-estado="50">
       <td class="num"><a href="#11496" title="Enlace a este proyecto">11496</a></td><td><b>Vehículo para la pastoral regional de los religiosos, en Nidamanaru.</b><div class="lugar">Vijayawada · India</div></td><td>Vijayawada</td><td>India</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
-<tr data-estado="Cerrado" data-continente="Asia" data-numero="11495" data-resolucion="abril 2026"
-      data-diocesis="Cudappah" data-pais="India" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="Asia" data-numero="11495" data-resolucion="abril 2026"
+      data-diocesis="Cudappah" data-pais="India" data-orden-estado="50">
       <td class="num"><a href="#11495" title="Enlace a este proyecto">11495</a></td><td><b>Animación y formación a la Vocación Sacerdotal. &quot;Llamados a servir&quot;</b><div class="lugar">Cudappah · India</div></td><td>Cudappah</td><td>India</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Aprobado" data-continente="América" data-numero="11494" data-resolucion="abril 2026"
       data-diocesis="Quilmes" data-pais="Argentina" data-orden-estado="20">
       <td class="num"><a href="#11494" title="Enlace a este proyecto">11494</a></td><td><b>Construcción de aseos para peregrinos en el Santuario Schoenstatt, Florencio Varela</b><div class="lugar">Quilmes · Argentina</div></td><td>Quilmes</td><td>Argentina</td>
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 50 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">50 %</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="11493" data-resolucion="abril 2026"
-      data-diocesis="Singida" data-pais="Tanzania" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="11493" data-resolucion="abril 2026"
+      data-diocesis="Singida" data-pais="Tanzania" data-orden-estado="50">
       <td class="num"><a href="#11493" title="Enlace a este proyecto">11493</a></td><td><b>Formación de jóvenes en la subparroquia St. Gaspar de Buffalo en Mwembeni</b><div class="lugar">Singida · Tanzania</div></td><td>Singida</td><td>Tanzania</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="11492" data-resolucion="abril 2026"
-      data-diocesis="Kole" data-pais="Rep. Dem. del Congo" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="11492" data-resolucion="abril 2026"
+      data-diocesis="Kole" data-pais="Rep. Dem. del Congo" data-orden-estado="50">
       <td class="num"><a href="#11492" title="Enlace a este proyecto">11492</a></td><td><b>Bancos para la escuela St. Michel Asoyi en Bolonge</b><div class="lugar">Kole · Rep. Dem. del Congo</div></td><td>Kole</td><td>Rep. Dem. del Congo</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="11491" data-resolucion="abril 2026"
-      data-diocesis="Kole" data-pais="Rep. Dem. del Congo" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="11491" data-resolucion="abril 2026"
+      data-diocesis="Kole" data-pais="Rep. Dem. del Congo" data-orden-estado="50">
       <td class="num"><a href="#11491" title="Enlace a este proyecto">11491</a></td><td><b>Sillas de Ruedas (100) para personas con discapacidad</b><div class="lugar">Kole · Rep. Dem. del Congo</div></td><td>Kole</td><td>Rep. Dem. del Congo</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="En estudio" data-continente="África" data-numero="11490" data-resolucion="octubre 2026"
       data-diocesis="Kenge" data-pais="Rep. Dem. del Congo" data-orden-estado="10">
@@ -1996,10 +1997,10 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td class="num"><a href="#11477" title="Enlace a este proyecto">11477</a></td><td><b>Construcción de saneamientos para peregrinos</b><div class="lugar">Rajshahi · Bangladesh</div></td><td>Rajshahi</td><td>Bangladesh</td>
       <td><span class="pill warn">En estudio</span><div class="fechas">Resolución: octubre 2026</div></td>
       <td class="fecha">octubre 2026</td><td class="fecha">—</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="11476" data-resolucion="abril 2026"
-      data-diocesis="Soroti" data-pais="Uganda" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="11476" data-resolucion="abril 2026"
+      data-diocesis="Soroti" data-pais="Uganda" data-orden-estado="50">
       <td class="num"><a href="#11476" title="Enlace a este proyecto">11476</a></td><td><b>Vehículo para la pastoral de la Parroquia, Apopong</b><div class="lugar">Soroti · Uganda</div></td><td>Soroti</td><td>Uganda</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Aprobado" data-continente="África" data-numero="11475" data-resolucion="abril 2026"
       data-diocesis="Mopti" data-pais="Mali" data-orden-estado="20">
@@ -2032,17 +2033,17 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 56 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">56 %</td><td class="fecha">—</td></tr>
 <tr data-estado="Registrado" data-continente="África" data-numero="11469" data-resolucion="octubre 2026"
-      data-diocesis="Idiofa" data-pais="Rep. Dem. del Congo" data-orden-estado="2">
+      data-diocesis="Idiofa" data-pais="Rep. Dem. del Congo" data-orden-estado="1">
       <td class="num"><a href="#11469" title="Enlace a este proyecto">11469</a></td><td><b>Rehabilitación Vivienda en el Convento de las Religiosas, en Mwilambongo</b><div class="lugar">Idiofa · Rep. Dem. del Congo</div></td><td>Idiofa</td><td>Rep. Dem. del Congo</td>
       <td><span class="pill info">Registrado</span><div class="motivo"><span class="pill warn">Pospuesto</span></div><div class="fechas">Resolución: octubre 2026</div></td>
       <td class="fecha">octubre 2026</td><td class="fecha">—</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="11468" data-resolucion="abril 2026"
-      data-diocesis="Nairobi" data-pais="Kenia" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="11468" data-resolucion="abril 2026"
+      data-diocesis="Nairobi" data-pais="Kenia" data-orden-estado="50">
       <td class="num"><a href="#11468" title="Enlace a este proyecto">11468</a></td><td><b>Rehabilitación de la Residencia Sacerdotal y ampliar Capilla</b><div class="lugar">Nairobi · Kenia</div></td><td>Nairobi</td><td>Kenia</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Registrado" data-continente="América" data-numero="11467" data-resolucion="octubre 2026"
-      data-diocesis="Fort-Liberté" data-pais="Haití" data-orden-estado="2">
+      data-diocesis="Fort-Liberté" data-pais="Haití" data-orden-estado="1">
       <td class="num"><a href="#11467" title="Enlace a este proyecto">11467</a></td><td><b>Rehabilitación de la Capilla de Miniére</b><div class="lugar">Fort-Liberté · Haití</div></td><td>Fort-Liberté</td><td>Haití</td>
       <td><span class="pill info">Registrado</span><div class="motivo"><span class="pill warn">Pospuesto</span></div><div class="fechas">Resolución: octubre 2026</div></td>
       <td class="fecha">octubre 2026</td><td class="fecha">—</td><td class="fecha">—</td></tr>
@@ -2051,10 +2052,10 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td class="num"><a href="#11466" title="Enlace a este proyecto">11466</a></td><td><b>Construcción de la Casa Parroquial, en Morropón</b><div class="lugar">Chulucanas · Perú</div></td><td>Chulucanas</td><td>Perú</td>
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 33 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">33 %</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="América" data-numero="11465" data-resolucion="abril 2026"
-      data-diocesis="Cuernavaca" data-pais="México" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="América" data-numero="11465" data-resolucion="abril 2026"
+      data-diocesis="Cuernavaca" data-pais="México" data-orden-estado="50">
       <td class="num"><a href="#11465" title="Enlace a este proyecto">11465</a></td><td><b>Ejercicios Espirituales para Sacerdotes diocesanos</b><div class="lugar">Cuernavaca · México</div></td><td>Cuernavaca</td><td>México</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Aprobado" data-continente="África" data-numero="11464" data-resolucion="abril 2026"
       data-diocesis="Lubango" data-pais="Angola" data-orden-estado="20">
@@ -2062,7 +2063,7 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 66 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">66 %</td><td class="fecha">—</td></tr>
 <tr data-estado="Registrado" data-continente="América" data-numero="11463" data-resolucion="octubre 2026"
-      data-diocesis="Fort-Liberté" data-pais="Haití" data-orden-estado="2">
+      data-diocesis="Fort-Liberté" data-pais="Haití" data-orden-estado="1">
       <td class="num"><a href="#11463" title="Enlace a este proyecto">11463</a></td><td><b>Construcción Centro de Acogida para niños desfavorecidos, en Carice</b><div class="lugar">Fort-Liberté · Haití</div></td><td>Fort-Liberté</td><td>Haití</td>
       <td><span class="pill info">Registrado</span><div class="motivo"><span class="pill warn">Pospuesto</span></div><div class="fechas">Resolución: octubre 2026</div></td>
       <td class="fecha">octubre 2026</td><td class="fecha">—</td><td class="fecha">—</td></tr>
@@ -2096,25 +2097,25 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td class="num"><a href="#11457" title="Enlace a este proyecto">11457</a></td><td><b>Construcción de la iglesia parroquial Our Lady of the Good Health, Karbook</b><div class="lugar">Agartala · India</div></td><td>Agartala</td><td>India</td>
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 80 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">80 %</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="11456" data-resolucion="abril 2026"
-      data-diocesis="Tororo" data-pais="Uganda" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="11456" data-resolucion="abril 2026"
+      data-diocesis="Tororo" data-pais="Uganda" data-orden-estado="50">
       <td class="num"><a href="#11456" title="Enlace a este proyecto">11456</a></td><td><b>Construcción de Centro de Salud en Angorom</b><div class="lugar">Tororo · Uganda</div></td><td>Tororo</td><td>Uganda</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="En estudio" data-continente="África" data-numero="11455" data-resolucion="octubre 2026"
       data-diocesis="Kisantu" data-pais="Rep. Dem. del Congo" data-orden-estado="10">
       <td class="num"><a href="#11455" title="Enlace a este proyecto">11455</a></td><td><b>Rehabilitación de la residencia parroquial de ancianos, en Ngidinga</b><div class="lugar">Kisantu · Rep. Dem. del Congo</div></td><td>Kisantu</td><td>Rep. Dem. del Congo</td>
       <td><span class="pill warn">En estudio</span><div class="fechas">Resolución: octubre 2026</div></td>
       <td class="fecha">octubre 2026</td><td class="fecha">—</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="Asia" data-numero="11453" data-resolucion="abril 2026"
-      data-diocesis="Guntur" data-pais="India" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="Asia" data-numero="11453" data-resolucion="abril 2026"
+      data-diocesis="Guntur" data-pais="India" data-orden-estado="50">
       <td class="num"><a href="#11453" title="Enlace a este proyecto">11453</a></td><td><b>Formación de Catequistas en Pastoral Bíblica (3 días)</b><div class="lugar">Guntur · India</div></td><td>Guntur</td><td>India</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
-<tr data-estado="Cerrado" data-continente="América" data-numero="11452" data-resolucion="abril 2026"
-      data-diocesis="Cali" data-pais="Colombia" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="América" data-numero="11452" data-resolucion="abril 2026"
+      data-diocesis="Cali" data-pais="Colombia" data-orden-estado="50">
       <td class="num"><a href="#11452" title="Enlace a este proyecto">11452</a></td><td><b>Salones para el hogar &quot;Jardín de Jesús&quot;</b><div class="lugar">Cali · Colombia</div></td><td>Cali</td><td>Colombia</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Aprobado" data-continente="América" data-numero="11451" data-resolucion="abril 2026"
       data-diocesis="Palmira" data-pais="Colombia" data-orden-estado="20">
@@ -2146,10 +2147,10 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td class="num"><a href="#11445" title="Enlace a este proyecto">11445</a></td><td><b>Construcción de la iglesia de Nuestra Señora del Carmen en Quante Town</b><div class="lugar">Emdeber · Etiopía</div></td><td>Emdeber</td><td>Etiopía</td>
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 44 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">44 %</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="11444" data-resolucion="abril 2026"
-      data-diocesis="Kara" data-pais="Togo" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="11444" data-resolucion="abril 2026"
+      data-diocesis="Kara" data-pais="Togo" data-orden-estado="50">
       <td class="num"><a href="#11444" title="Enlace a este proyecto">11444</a></td><td><b>Motos para la pastoral de varias parroquias rurales</b><div class="lugar">Kara · Togo</div></td><td>Kara</td><td>Togo</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Aprobado" data-continente="América" data-numero="11443" data-resolucion="abril 2026"
       data-diocesis="Baní" data-pais="República Dominicana" data-orden-estado="20">
@@ -2196,25 +2197,25 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td class="num"><a href="#11435" title="Enlace a este proyecto">11435</a></td><td><b>Vehículo para la pastoral del colegio y la comunidad religiosa</b><div class="lugar">San Miguel · Argentina</div></td><td>San Miguel</td><td>Argentina</td>
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 76 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">76 %</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="Asia" data-numero="11434" data-resolucion="abril 2026"
-      data-diocesis="Chilaw" data-pais="Sri Lanka" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="Asia" data-numero="11434" data-resolucion="abril 2026"
+      data-diocesis="Chilaw" data-pais="Sri Lanka" data-orden-estado="50">
       <td class="num"><a href="#11434" title="Enlace a este proyecto">11434</a></td><td><b>Construcción de Alojamiento en el Centro Pastoral</b><div class="lugar">Chilaw · Sri Lanka</div></td><td>Chilaw</td><td>Sri Lanka</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Aprobado" data-continente="África" data-numero="11433" data-resolucion="abril 2026"
       data-diocesis="Kasongo" data-pais="Rep. Dem. del Congo" data-orden-estado="20">
       <td class="num"><a href="#11433" title="Enlace a este proyecto">11433</a></td><td><b>Rehabilitar los edificios de la Parroquia de Mingana</b><div class="lugar">Kasongo · Rep. Dem. del Congo</div></td><td>Kasongo</td><td>Rep. Dem. del Congo</td>
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 80 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">80 %</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="América" data-numero="11432" data-resolucion="abril 2026"
-      data-diocesis="Anse-à-Veau et Miragoâne" data-pais="Haití" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="América" data-numero="11432" data-resolucion="abril 2026"
+      data-diocesis="Anse-à-Veau et Miragoâne" data-pais="Haití" data-orden-estado="50">
       <td class="num"><a href="#11432" title="Enlace a este proyecto">11432</a></td><td><b>Sistema de Energia Solar para el Santuario, Duparc</b><div class="lugar">Anse-à-Veau et Miragoâne · Haití</div></td><td>Anse-à-Veau et Miragoâne</td><td>Haití</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="11431" data-resolucion="abril 2026"
-      data-diocesis="Chinhoyi" data-pais="Zimbabwe" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="11431" data-resolucion="abril 2026"
+      data-diocesis="Chinhoyi" data-pais="Zimbabwe" data-orden-estado="50">
       <td class="num"><a href="#11431" title="Enlace a este proyecto">11431</a></td><td><b>Formación de mujeres y jóvenes para su participación en la pastoral</b><div class="lugar">Chinhoyi · Zimbabwe</div></td><td>Chinhoyi</td><td>Zimbabwe</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="En estudio" data-continente="América" data-numero="11430" data-resolucion="octubre 2026"
       data-diocesis="Ciudad Guayana" data-pais="Venezuela" data-orden-estado="10">
@@ -2226,20 +2227,20 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td class="num"><a href="#11429" title="Enlace a este proyecto">11429</a></td><td><b>Rehabilitación del auditorio del Instituto</b><div class="lugar">Coro · Venezuela</div></td><td>Coro</td><td>Venezuela</td>
       <td><span class="pill warn">En estudio</span><div class="fechas">Resolución: octubre 2026</div></td>
       <td class="fecha">octubre 2026</td><td class="fecha">—</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="11428" data-resolucion="abril 2026"
-      data-diocesis="Tabora" data-pais="Tanzania" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="11428" data-resolucion="abril 2026"
+      data-diocesis="Tabora" data-pais="Tanzania" data-orden-estado="50">
       <td class="num"><a href="#11428" title="Enlace a este proyecto">11428</a></td><td><b>Construcción del muro del monasterio en Kipalapala</b><div class="lugar">Tabora · Tanzania</div></td><td>Tabora</td><td>Tanzania</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Aprobado" data-continente="África" data-numero="11427" data-resolucion="abril 2026"
       data-diocesis="Lolo" data-pais="Rep. Dem. del Congo" data-orden-estado="20">
       <td class="num"><a href="#11427" title="Enlace a este proyecto">11427</a></td><td><b>Beca de Formación en Psicología para Sacerdote</b><div class="lugar">Lolo · Rep. Dem. del Congo</div></td><td>Lolo</td><td>Rep. Dem. del Congo</td>
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 83 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">83 %</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="11426" data-resolucion="abril 2026"
-      data-diocesis="Kamina" data-pais="Rep. Dem. del Congo" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="11426" data-resolucion="abril 2026"
+      data-diocesis="Kamina" data-pais="Rep. Dem. del Congo" data-orden-estado="50">
       <td class="num"><a href="#11426" title="Enlace a este proyecto">11426</a></td><td><b>Vehículo para actividad social y pastoral</b><div class="lugar">Kamina · Rep. Dem. del Congo</div></td><td>Kamina</td><td>Rep. Dem. del Congo</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="En estudio" data-continente="América" data-numero="11425" data-resolucion="octubre 2026"
       data-diocesis="Jérémie" data-pais="Haití" data-orden-estado="10">
@@ -2247,7 +2248,7 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td><span class="pill warn">En estudio</span><div class="fechas">Resolución: octubre 2026</div></td>
       <td class="fecha">octubre 2026</td><td class="fecha">—</td><td class="fecha">—</td></tr>
 <tr data-estado="Registrado" data-continente="África" data-numero="11424" data-resolucion="octubre 2026"
-      data-diocesis="Borgou" data-pais="Benín" data-orden-estado="2">
+      data-diocesis="Borgou" data-pais="Benín" data-orden-estado="1">
       <td class="num"><a href="#11424" title="Enlace a este proyecto">11424</a></td><td><b>Construcción de un capilla en Kparo</b><div class="lugar">Borgou · Benín</div></td><td>Borgou</td><td>Benín</td>
       <td><span class="pill info">Registrado</span><div class="motivo"><span class="pill warn">Pospuesto</span></div><div class="fechas">Resolución: octubre 2026</div></td>
       <td class="fecha">octubre 2026</td><td class="fecha">—</td><td class="fecha">—</td></tr>
@@ -2296,25 +2297,25 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td class="num"><a href="#11413" title="Enlace a este proyecto">11413</a></td><td><b>Plan Diocesano de Formación de Catequistas</b><div class="lugar">Kigoma · Tanzania</div></td><td>Kigoma</td><td>Tanzania</td>
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 21 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">21 %</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="11412" data-resolucion="abril 2026"
-      data-diocesis="Kabgayi" data-pais="Rwanda" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="11412" data-resolucion="abril 2026"
+      data-diocesis="Kabgayi" data-pais="Rwanda" data-orden-estado="50">
       <td class="num"><a href="#11412" title="Enlace a este proyecto">11412</a></td><td><b>Construcción de la Iglesia de Kaganza</b><div class="lugar">Kabgayi · Rwanda</div></td><td>Kabgayi</td><td>Rwanda</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
-<tr data-estado="Cerrado" data-continente="América" data-numero="11411" data-resolucion="abril 2026"
-      data-diocesis="Anse-à-Veau et Miragoâne" data-pais="Haití" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="América" data-numero="11411" data-resolucion="abril 2026"
+      data-diocesis="Anse-à-Veau et Miragoâne" data-pais="Haití" data-orden-estado="50">
       <td class="num"><a href="#11411" title="Enlace a este proyecto">11411</a></td><td><b>Sistema de Energia Solar para la Iglesia de Labrousse</b><div class="lugar">Anse-à-Veau et Miragoâne · Haití</div></td><td>Anse-à-Veau et Miragoâne</td><td>Haití</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Aprobado" data-continente="América" data-numero="11410" data-resolucion="abril 2026"
       data-diocesis="San Miguel de Ibarra" data-pais="Ecuador" data-orden-estado="20">
       <td class="num"><a href="#11410" title="Enlace a este proyecto">11410</a></td><td><b>Construcción de Cisterna de Agua para el Monasterio</b><div class="lugar">San Miguel de Ibarra · Ecuador</div></td><td>San Miguel de Ibarra</td><td>Ecuador</td>
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 83 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">83 %</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="América" data-numero="11409" data-resolucion="abril 2026"
-      data-diocesis="Manizales" data-pais="Colombia" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="América" data-numero="11409" data-resolucion="abril 2026"
+      data-diocesis="Manizales" data-pais="Colombia" data-orden-estado="50">
       <td class="num"><a href="#11409" title="Enlace a este proyecto">11409</a></td><td><b>Rehabilitación de la capilla de las Hermanitas de los Pobres</b><div class="lugar">Manizales · Colombia</div></td><td>Manizales</td><td>Colombia</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="En estudio" data-continente="África" data-numero="11408" data-resolucion="octubre 2026"
       data-diocesis="Kandi" data-pais="Benín" data-orden-estado="10">
@@ -2336,10 +2337,10 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td class="num"><a href="#11405" title="Enlace a este proyecto">11405</a></td><td><b>Construcción de la Iglesia Sts. Simon y Judas, en Opaya</b><div class="lugar">Gulu · Uganda</div></td><td>Gulu</td><td>Uganda</td>
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 52 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">52 %</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="Asia" data-numero="11404" data-resolucion="abril 2026"
-      data-diocesis="Cuddapah" data-pais="India" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="Asia" data-numero="11404" data-resolucion="abril 2026"
+      data-diocesis="Cuddapah" data-pais="India" data-orden-estado="50">
       <td class="num"><a href="#11404" title="Enlace a este proyecto">11404</a></td><td><b>Plan Diocesano de Formación Pastoral de Jóvenes en el año Jubilar, en Chittoor</b><div class="lugar">Cuddapah · India</div></td><td>Cuddapah</td><td>India</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Aprobado" data-continente="Asia" data-numero="11402" data-resolucion="abril 2026"
       data-diocesis="Baalbek-Deir El Ahmar" data-pais="Líbano" data-orden-estado="20">
@@ -2401,10 +2402,10 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td class="num"><a href="#11390" title="Enlace a este proyecto">11390</a></td><td><b>Formación bíblica de animadores pastorales (2ª fase )</b><div class="lugar">Yopal · Colombia</div></td><td>Yopal</td><td>Colombia</td>
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 53 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">53 %</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="Europa" data-numero="11389" data-resolucion="abril 2026"
-      data-diocesis="Minsk-Mogilev" data-pais="Bielorrusia" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="Europa" data-numero="11389" data-resolucion="abril 2026"
+      data-diocesis="Minsk-Mogilev" data-pais="Bielorrusia" data-orden-estado="50">
       <td class="num"><a href="#11389" title="Enlace a este proyecto">11389</a></td><td><b>Construcción de Capilla en Sokol</b><div class="lugar">Minsk-Mogilev · Bielorrusia</div></td><td>Minsk-Mogilev</td><td>Bielorrusia</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Aprobado" data-continente="África" data-numero="11388" data-resolucion="abril 2026"
       data-diocesis="Kandi" data-pais="Benín" data-orden-estado="20">
@@ -2416,10 +2417,10 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td class="num"><a href="#11387" title="Enlace a este proyecto">11387</a></td><td><b>Rehabilitación de la Iglesia de Bacongo</b><div class="lugar">Brazzaville · Rep. del Congo</div></td><td>Brazzaville</td><td>Rep. del Congo</td>
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 90 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">90 %</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="11386" data-resolucion="abril 2026"
-      data-diocesis="Arua" data-pais="Uganda" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="11386" data-resolucion="abril 2026"
+      data-diocesis="Arua" data-pais="Uganda" data-orden-estado="50">
       <td class="num"><a href="#11386" title="Enlace a este proyecto">11386</a></td><td><b>Finalizar Construcción de la Iglesia St. Paul Koo, Onduparaka</b><div class="lugar">Arua · Uganda</div></td><td>Arua</td><td>Uganda</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Aprobado" data-continente="África" data-numero="11385" data-resolucion="abril 2026"
       data-diocesis="Johannersburg" data-pais="Sudáfrica" data-orden-estado="20">
@@ -2487,7 +2488,7 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td><span class="pill warn">En estudio</span><div class="fechas">Resolución: octubre 2026</div></td>
       <td class="fecha">octubre 2026</td><td class="fecha">—</td><td class="fecha">—</td></tr>
 <tr data-estado="Registrado" data-continente="África" data-numero="11372" data-resolucion="octubre 2026"
-      data-diocesis="Singida" data-pais="Tanzania" data-orden-estado="2">
+      data-diocesis="Singida" data-pais="Tanzania" data-orden-estado="1">
       <td class="num"><a href="#11372" title="Enlace a este proyecto">11372</a></td><td><b>Formación de catequistas para la parroquia de Manyoni</b><div class="lugar">Singida · Tanzania</div></td><td>Singida</td><td>Tanzania</td>
       <td><span class="pill info">Registrado</span><div class="motivo"><span class="pill warn">Pospuesto</span></div><div class="fechas">Resolución: octubre 2026</div></td>
       <td class="fecha">octubre 2026</td><td class="fecha">—</td><td class="fecha">—</td></tr>
@@ -2501,10 +2502,10 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td class="num"><a href="#11370" title="Enlace a este proyecto">11370</a></td><td><b>Plan de Formación y Renovación de la Fe</b><div class="lugar">Srikakulam · India</div></td><td>Srikakulam</td><td>India</td>
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 40 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">40 %</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="América" data-numero="11369" data-resolucion="abril 2026"
-      data-diocesis="Tegucigalpa" data-pais="Honduras" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="América" data-numero="11369" data-resolucion="abril 2026"
+      data-diocesis="Tegucigalpa" data-pais="Honduras" data-orden-estado="50">
       <td class="num"><a href="#11369" title="Enlace a este proyecto">11369</a></td><td><b>Sostenimiento de las vocaciones nativas del Seminario mayor de Suyapa</b><div class="lugar">Tegucigalpa · Honduras</div></td><td>Tegucigalpa</td><td>Honduras</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Aprobado" data-continente="Asia" data-numero="11368" data-resolucion="abril 2026"
       data-diocesis="Cebú" data-pais="Filipinas" data-orden-estado="20">
@@ -2527,14 +2528,14 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 45 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">45 %</td><td class="fecha">—</td></tr>
 <tr data-estado="En estudio" data-continente="África" data-numero="11364" data-resolucion="octubre 2026"
-      data-diocesis="Arua" data-pais="Uganda" data-orden-estado="12">
+      data-diocesis="Arua" data-pais="Uganda" data-orden-estado="11">
       <td class="num"><a href="#11364" title="Enlace a este proyecto">11364</a></td><td><b>Construcción de un Convento para las religiosas, Nyumanzi</b><div class="lugar">Arua · Uganda</div></td><td>Arua</td><td>Uganda</td>
       <td><span class="pill warn">En estudio</span><div class="motivo"><span class="pill warn">Pospuesto</span></div><div class="fechas">Resolución: octubre 2026</div></td>
       <td class="fecha">octubre 2026</td><td class="fecha">—</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="11363" data-resolucion="abril 2026"
-      data-diocesis="Lira" data-pais="Uganda" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="11363" data-resolucion="abril 2026"
+      data-diocesis="Lira" data-pais="Uganda" data-orden-estado="50">
       <td class="num"><a href="#11363" title="Enlace a este proyecto">11363</a></td><td><b>Motocicleta para la pastoral de la Parroquia, Gomi.</b><div class="lugar">Lira · Uganda</div></td><td>Lira</td><td>Uganda</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Aprobado" data-continente="África" data-numero="11362" data-resolucion="abril 2026"
       data-diocesis="Bagamoyo" data-pais="Tanzania" data-orden-estado="20">
@@ -2546,25 +2547,25 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td class="num"><a href="#11361" title="Enlace a este proyecto">11361</a></td><td><b>Pozo de agua para la parroquia de Ivuna</b><div class="lugar">Mbeya · Tanzania</div></td><td>Mbeya</td><td>Tanzania</td>
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 94 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">94 %</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="Asia" data-numero="11360" data-resolucion="abril 2026"
-      data-diocesis="Jhansi" data-pais="India" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="Asia" data-numero="11360" data-resolucion="abril 2026"
+      data-diocesis="Jhansi" data-pais="India" data-orden-estado="50">
       <td class="num"><a href="#11360" title="Enlace a este proyecto">11360</a></td><td><b>Plan diocesano de Animación juvenil</b><div class="lugar">Jhansi · India</div></td><td>Jhansi</td><td>India</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
-<tr data-estado="Cerrado" data-continente="Asia" data-numero="11359" data-resolucion="abril 2026"
-      data-diocesis="Cuddapah" data-pais="India" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="Asia" data-numero="11359" data-resolucion="abril 2026"
+      data-diocesis="Cuddapah" data-pais="India" data-orden-estado="50">
       <td class="num"><a href="#11359" title="Enlace a este proyecto">11359</a></td><td><b>Plan de Formación, Animación y Fortalecimiento en la Fe</b><div class="lugar">Cuddapah · India</div></td><td>Cuddapah</td><td>India</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Aprobado" data-continente="Asia" data-numero="11358" data-resolucion="abril 2026"
       data-diocesis="Eluru" data-pais="India" data-orden-estado="20">
       <td class="num"><a href="#11358" title="Enlace a este proyecto">11358</a></td><td><b>Construcción de Iglesia en Kagupadu, Pathuru.</b><div class="lugar">Eluru · India</div></td><td>Eluru</td><td>India</td>
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 90 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">90 %</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="11356" data-resolucion="abril 2026"
-      data-diocesis="Arua" data-pais="Uganda" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="11356" data-resolucion="abril 2026"
+      data-diocesis="Arua" data-pais="Uganda" data-orden-estado="50">
       <td class="num"><a href="#11356" title="Enlace a este proyecto">11356</a></td><td><b>Formación de mujeres líderes para difundir la fe católica, en Yumbe</b><div class="lugar">Arua · Uganda</div></td><td>Arua</td><td>Uganda</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Aprobado" data-continente="América" data-numero="11355" data-resolucion="abril 2026"
       data-diocesis="Iquitos" data-pais="Perú" data-orden-estado="20">
@@ -2576,10 +2577,10 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td class="num"><a href="#11354" title="Enlace a este proyecto">11354</a></td><td><b>Promoción de niñas y jóvenes de la Residencia, en Beleko.</b><div class="lugar">Segou · Mali</div></td><td>Segou</td><td>Mali</td>
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 80 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">80 %</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="Asia" data-numero="11353" data-resolucion="abril 2026"
-      data-diocesis="Nellore" data-pais="India" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="Asia" data-numero="11353" data-resolucion="abril 2026"
+      data-diocesis="Nellore" data-pais="India" data-orden-estado="50">
       <td class="num"><a href="#11353" title="Enlace a este proyecto">11353</a></td><td><b>Rehabilitación de la Iglesia de Bandla Palem, en Vallur</b><div class="lugar">Nellore · India</div></td><td>Nellore</td><td>India</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Aprobado" data-continente="América" data-numero="11352" data-resolucion="abril 2026"
       data-diocesis="Jérémie" data-pais="Haití" data-orden-estado="20">
@@ -2612,14 +2613,14 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 67 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">67 %</td><td class="fecha">—</td></tr>
 <tr data-estado="Registrado" data-continente="África" data-numero="11345" data-resolucion="octubre 2026"
-      data-diocesis="Sumbe" data-pais="Angola" data-orden-estado="2">
+      data-diocesis="Sumbe" data-pais="Angola" data-orden-estado="1">
       <td class="num"><a href="#11345" title="Enlace a este proyecto">11345</a></td><td><b>Construcción Escuela Primaria San Francisco de Assis, en Alto Chingo</b><div class="lugar">Sumbe · Angola</div></td><td>Sumbe</td><td>Angola</td>
       <td><span class="pill info">Registrado</span><div class="motivo"><span class="pill warn">Pospuesto</span></div><div class="fechas">Resolución: octubre 2026</div></td>
       <td class="fecha">octubre 2026</td><td class="fecha">—</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="11344" data-resolucion="abril 2026"
-      data-diocesis="Boma" data-pais="Rep. Dem. del Congo" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="11344" data-resolucion="abril 2026"
+      data-diocesis="Boma" data-pais="Rep. Dem. del Congo" data-orden-estado="50">
       <td class="num"><a href="#11344" title="Enlace a este proyecto">11344</a></td><td><b>Rehabilitación de la cubierta Foyer San Agustín &quot;NZO DIKANDA&quot;</b><div class="lugar">Boma · Rep. Dem. del Congo</div></td><td>Boma</td><td>Rep. Dem. del Congo</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Registrado" data-continente="África" data-numero="11342" data-resolucion="octubre 2026"
       data-diocesis="Lugazi" data-pais="Uganda" data-orden-estado="0">
@@ -2627,7 +2628,7 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td><span class="pill info">Registrado</span><div class="fechas">Resolución: octubre 2026</div></td>
       <td class="fecha">octubre 2026</td><td class="fecha">—</td><td class="fecha">—</td></tr>
 <tr data-estado="Registrado" data-continente="África" data-numero="11341" data-resolucion="octubre 2026"
-      data-diocesis="Arua" data-pais="Uganda" data-orden-estado="2">
+      data-diocesis="Arua" data-pais="Uganda" data-orden-estado="1">
       <td class="num"><a href="#11341" title="Enlace a este proyecto">11341</a></td><td><b>Aseos y Baños para la casa del Director del Centro de Formación Pastoral, en Maracha</b><div class="lugar">Arua · Uganda</div></td><td>Arua</td><td>Uganda</td>
       <td><span class="pill info">Registrado</span><div class="motivo"><span class="pill warn">Pospuesto</span></div><div class="fechas">Resolución: octubre 2026</div></td>
       <td class="fecha">octubre 2026</td><td class="fecha">—</td><td class="fecha">—</td></tr>
@@ -2651,25 +2652,25 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td class="num"><a href="#11337" title="Enlace a este proyecto">11337</a></td><td><b>Instalación de paneles solares en el Obispado.</b><div class="lugar">Kisangani · Rep. Dem. del Congo</div></td><td>Kisangani</td><td>Rep. Dem. del Congo</td>
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 85 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">85 %</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="Asia" data-numero="11336" data-resolucion="abril 2026"
-      data-diocesis="Guntur" data-pais="India" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="Asia" data-numero="11336" data-resolucion="abril 2026"
+      data-diocesis="Guntur" data-pais="India" data-orden-estado="50">
       <td class="num"><a href="#11336" title="Enlace a este proyecto">11336</a></td><td><b>Construcción de nueva Iglesia, en Burdaguntapalle</b><div class="lugar">Guntur · India</div></td><td>Guntur</td><td>India</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Aprobado" data-continente="América" data-numero="11335" data-resolucion="abril 2026"
       data-diocesis="Fort-Liberté" data-pais="Haití" data-orden-estado="20">
       <td class="num"><a href="#11335" title="Enlace a este proyecto">11335</a></td><td><b>Fomentar los medios de comunicación social en la Diócesis</b><div class="lugar">Fort-Liberté · Haití</div></td><td>Fort-Liberté</td><td>Haití</td>
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 38 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">38 %</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="11334" data-resolucion="abril 2026"
-      data-diocesis="Ouagadougou" data-pais="Burkina Faso" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="11334" data-resolucion="abril 2026"
+      data-diocesis="Ouagadougou" data-pais="Burkina Faso" data-orden-estado="50">
       <td class="num"><a href="#11334" title="Enlace a este proyecto">11334</a></td><td><b>Construcción del Centro de Formación de Religiosas, en Tangsega</b><div class="lugar">Ouagadougou · Burkina Faso</div></td><td>Ouagadougou</td><td>Burkina Faso</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="11333" data-resolucion="abril 2026"
-      data-diocesis="Maputo" data-pais="Mozambique" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="11333" data-resolucion="abril 2026"
+      data-diocesis="Maputo" data-pais="Mozambique" data-orden-estado="50">
       <td class="num"><a href="#11333" title="Enlace a este proyecto">11333</a></td><td><b>Construcción Casa de Retiro de los PP. Franciscanos, en Matutine</b><div class="lugar">Maputo · Mozambique</div></td><td>Maputo</td><td>Mozambique</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="En estudio" data-continente="América" data-numero="11332" data-resolucion="octubre 2026"
       data-diocesis="Matanzas" data-pais="Cuba" data-orden-estado="10">
@@ -2686,10 +2687,10 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td class="num"><a href="#11330" title="Enlace a este proyecto">11330</a></td><td><b>Rehabilitar la Casa Sacerdotal, en Adjumani.</b><div class="lugar">Arua · Uganda</div></td><td>Arua</td><td>Uganda</td>
       <td><span class="pill warn">En estudio</span><div class="fechas">Resolución: octubre 2026</div></td>
       <td class="fecha">octubre 2026</td><td class="fecha">—</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="11329" data-resolucion="abril 2026"
-      data-diocesis="Nebbi" data-pais="Uganda" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="11329" data-resolucion="abril 2026"
+      data-diocesis="Nebbi" data-pais="Uganda" data-orden-estado="50">
       <td class="num"><a href="#11329" title="Enlace a este proyecto">11329</a></td><td><b>Proyecto de energia solar de 20 kw para el centro de formación pastoral de la Parroquia de Angal</b><div class="lugar">Nebbi · Uganda</div></td><td>Nebbi</td><td>Uganda</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Aprobado" data-continente="África" data-numero="11328" data-resolucion="abril 2026"
       data-diocesis="Boma" data-pais="Rep. Dem. del Congo" data-orden-estado="20">
@@ -2711,10 +2712,10 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td class="num"><a href="#11325" title="Enlace a este proyecto">11325</a></td><td><b>Formación de laicos, religiosos y sacerdotes: &quot;Sinodalidad en Acción&quot;.</b><div class="lugar">Hosanna · Etiopía</div></td><td>Hosanna</td><td>Etiopía</td>
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 41 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">41 %</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="11324" data-resolucion="abril 2026"
-      data-diocesis="Tamale" data-pais="Ghana" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="11324" data-resolucion="abril 2026"
+      data-diocesis="Tamale" data-pais="Ghana" data-orden-estado="50">
       <td class="num"><a href="#11324" title="Enlace a este proyecto">11324</a></td><td><b>Construcción de edificio para actividades de sostenibilidad de la Parroquia, en Savelugu</b><div class="lugar">Tamale · Ghana</div></td><td>Tamale</td><td>Ghana</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Aprobado" data-continente="América" data-numero="11323" data-resolucion="abril 2026"
       data-diocesis="La Habana" data-pais="Cuba" data-orden-estado="20">
@@ -2736,10 +2737,10 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td class="num"><a href="#11320" title="Enlace a este proyecto">11320</a></td><td><b>Motocicleta para la pastoral de la Parroquia, en Ooty</b><div class="lugar">Ootacamund · India</div></td><td>Ootacamund</td><td>India</td>
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 98 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">98 %</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="América" data-numero="11319" data-resolucion="abril 2026"
-      data-diocesis="Maturín" data-pais="Venezuela" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="América" data-numero="11319" data-resolucion="abril 2026"
+      data-diocesis="Maturín" data-pais="Venezuela" data-orden-estado="50">
       <td class="num"><a href="#11319" title="Enlace a este proyecto">11319</a></td><td><b>Formación de Seminaristas y Formadores del Seminario</b><div class="lugar">Maturín · Venezuela</div></td><td>Maturín</td><td>Venezuela</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Aprobado" data-continente="América" data-numero="11318" data-resolucion="abril 2026"
       data-diocesis="Maturín" data-pais="Venezuela" data-orden-estado="20">
@@ -2751,20 +2752,20 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td class="num"><a href="#11317" title="Enlace a este proyecto">11317</a></td><td><b>Formación de jóvenes animadores de Young Caritas para la diócesis</b><div class="lugar">San Ramón · Perú</div></td><td>San Ramón</td><td>Perú</td>
       <td><span class="pill warn">En estudio</span><div class="fechas">Resolución: octubre 2026</div></td>
       <td class="fecha">octubre 2026</td><td class="fecha">—</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="11316" data-resolucion="abril 2026"
-      data-diocesis="Kigoma" data-pais="Tanzania" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="11316" data-resolucion="abril 2026"
+      data-diocesis="Kigoma" data-pais="Tanzania" data-orden-estado="50">
       <td class="num"><a href="#11316" title="Enlace a este proyecto">11316</a></td><td><b>Rehabilitar el Centro de Salud Mental, en Kasaka</b><div class="lugar">Kigoma · Tanzania</div></td><td>Kigoma</td><td>Tanzania</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Aprobado" data-continente="África" data-numero="11315" data-resolucion="abril 2026"
       data-diocesis="Bobo-Dioulasso" data-pais="Burkina Faso" data-orden-estado="20">
       <td class="num"><a href="#11315" title="Enlace a este proyecto">11315</a></td><td><b>Instalación de Energía Solar para el Arzobispado</b><div class="lugar">Bobo-Dioulasso · Burkina Faso</div></td><td>Bobo-Dioulasso</td><td>Burkina Faso</td>
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 68 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">68 %</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="11313" data-resolucion="abril 2026"
-      data-diocesis="Jinja" data-pais="Uganda" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="11313" data-resolucion="abril 2026"
+      data-diocesis="Jinja" data-pais="Uganda" data-orden-estado="50">
       <td class="num"><a href="#11313" title="Enlace a este proyecto">11313</a></td><td><b>Construcción de Aulas y Tejados del Instituto de Secundaria, en Wesunire</b><div class="lugar">Jinja · Uganda</div></td><td>Jinja</td><td>Uganda</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Aprobado" data-continente="África" data-numero="11312" data-resolucion="abril 2026"
       data-diocesis="Mafinga" data-pais="Tanzania" data-orden-estado="20">
@@ -2781,18 +2782,18 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td class="num"><a href="#11310" title="Enlace a este proyecto">11310</a></td><td><b>Instalación de Energia Solar para el Centro de Formación de novicias, en Olasi</b><div class="lugar">Kisumu · Kenia</div></td><td>Kisumu</td><td>Kenia</td>
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 76 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">76 %</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="América" data-numero="11309" data-resolucion="abril 2026"
-      data-diocesis="Maracaibo" data-pais="Venezuela" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="América" data-numero="11309" data-resolucion="abril 2026"
+      data-diocesis="Maracaibo" data-pais="Venezuela" data-orden-estado="50">
       <td class="num"><a href="#11309" title="Enlace a este proyecto">11309</a></td><td><b>Rehabilitación del Monasterio de las Religiosas</b><div class="lugar">Maracaibo · Venezuela</div></td><td>Maracaibo</td><td>Venezuela</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Registrado" data-continente="África" data-numero="11308" data-resolucion="octubre 2026"
-      data-diocesis="Tanga" data-pais="Tanzania" data-orden-estado="2">
+      data-diocesis="Tanga" data-pais="Tanzania" data-orden-estado="1">
       <td class="num"><a href="#11308" title="Enlace a este proyecto">11308</a></td><td><b>Construcción de Casa General para las religiosas, en Kwamundolwa</b><div class="lugar">Tanga · Tanzania</div></td><td>Tanga</td><td>Tanzania</td>
       <td><span class="pill info">Registrado</span><div class="motivo"><span class="pill warn">Pospuesto</span></div><div class="fechas">Resolución: octubre 2026</div></td>
       <td class="fecha">octubre 2026</td><td class="fecha">—</td><td class="fecha">—</td></tr>
 <tr data-estado="Registrado" data-continente="África" data-numero="11307" data-resolucion="octubre 2026"
-      data-diocesis="Dar es Salaam" data-pais="Tanzania" data-orden-estado="2">
+      data-diocesis="Dar es Salaam" data-pais="Tanzania" data-orden-estado="1">
       <td class="num"><a href="#11307" title="Enlace a este proyecto">11307</a></td><td><b>Vehículo para el Monasterio de Benedictinos, en Pugu</b><div class="lugar">Dar es Salaam · Tanzania</div></td><td>Dar es Salaam</td><td>Tanzania</td>
       <td><span class="pill info">Registrado</span><div class="motivo"><span class="pill warn">Pospuesto</span></div><div class="fechas">Resolución: octubre 2026</div></td>
       <td class="fecha">octubre 2026</td><td class="fecha">—</td><td class="fecha">—</td></tr>
@@ -2806,20 +2807,20 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td class="num"><a href="#11305" title="Enlace a este proyecto">11305</a></td><td><b>Sostenimiento de las Religiosas de la diócesis</b><div class="lugar">Lurín · Perú</div></td><td>Lurín</td><td>Perú</td>
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 100 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">100 %</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="América" data-numero="11304" data-resolucion="abril 2026"
-      data-diocesis="San Miguel de Ibarra" data-pais="Ecuador" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="América" data-numero="11304" data-resolucion="abril 2026"
+      data-diocesis="San Miguel de Ibarra" data-pais="Ecuador" data-orden-estado="50">
       <td class="num"><a href="#11304" title="Enlace a este proyecto">11304</a></td><td><b>Vehículo para la pastoral parroquial</b><div class="lugar">San Miguel de Ibarra · Ecuador</div></td><td>San Miguel de Ibarra</td><td>Ecuador</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Aprobado" data-continente="África" data-numero="11302" data-resolucion="abril 2026"
       data-diocesis="Miarinarivo" data-pais="Madagascar" data-orden-estado="20">
       <td class="num"><a href="#11302" title="Enlace a este proyecto">11302</a></td><td><b>Formación de agentes de pastoral</b><div class="lugar">Miarinarivo · Madagascar</div></td><td>Miarinarivo</td><td>Madagascar</td>
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 26 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">26 %</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="Asia" data-numero="11301" data-resolucion="abril 2026"
-      data-diocesis="Guntur" data-pais="India" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="Asia" data-numero="11301" data-resolucion="abril 2026"
+      data-diocesis="Guntur" data-pais="India" data-orden-estado="50">
       <td class="num"><a href="#11301" title="Enlace a este proyecto">11301</a></td><td><b>Construcción de Salón parroquial multiusos, en PedaKonduru</b><div class="lugar">Guntur · India</div></td><td>Guntur</td><td>India</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Aprobado" data-continente="Asia" data-numero="11300" data-resolucion="abril 2026"
       data-diocesis="Raiganj" data-pais="India" data-orden-estado="20">
@@ -2841,15 +2842,15 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td class="num"><a href="#11297" title="Enlace a este proyecto">11297</a></td><td><b>Formación y fortalecimiento del clero 2026</b><div class="lugar">San Marcos de Arica · Chile</div></td><td>San Marcos de Arica</td><td>Chile</td>
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 76 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">76 %</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="América" data-numero="11296" data-resolucion="abril 2026"
-      data-diocesis="Riohacha" data-pais="Colombia" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="América" data-numero="11296" data-resolucion="abril 2026"
+      data-diocesis="Riohacha" data-pais="Colombia" data-orden-estado="50">
       <td class="num"><a href="#11296" title="Enlace a este proyecto">11296</a></td><td><b>Formación de laicos &quot;Paz y Reconciliación&quot;</b><div class="lugar">Riohacha · Colombia</div></td><td>Riohacha</td><td>Colombia</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
-<tr data-estado="Cerrado" data-continente="América" data-numero="11294" data-resolucion="abril 2026"
-      data-diocesis="Mérida" data-pais="Venezuela" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="América" data-numero="11294" data-resolucion="abril 2026"
+      data-diocesis="Mérida" data-pais="Venezuela" data-orden-estado="50">
       <td class="num"><a href="#11294" title="Enlace a este proyecto">11294</a></td><td><b>Equipamiento de la cocina del Seminario S. Buenaventura</b><div class="lugar">Mérida · Venezuela</div></td><td>Mérida</td><td>Venezuela</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="En estudio" data-continente="América" data-numero="11293" data-resolucion="octubre 2026"
       data-diocesis="Mérida" data-pais="Venezuela" data-orden-estado="10">
@@ -2861,10 +2862,10 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td class="num"><a href="#11292" title="Enlace a este proyecto">11292</a></td><td><b>Vehículo para el Seminario S.Buenaventura</b><div class="lugar">Mérida · Venezuela</div></td><td>Mérida</td><td>Venezuela</td>
       <td><span class="pill warn">En estudio</span><div class="fechas">Resolución: octubre 2026</div></td>
       <td class="fecha">octubre 2026</td><td class="fecha">—</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="11291" data-resolucion="abril 2026"
-      data-diocesis="Homa Bay" data-pais="Kenia" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="11291" data-resolucion="abril 2026"
+      data-diocesis="Homa Bay" data-pais="Kenia" data-orden-estado="50">
       <td class="num"><a href="#11291" title="Enlace a este proyecto">11291</a></td><td><b>Construcción de 6 aulas en el Centro educativo, en Wikoteng Asumbi</b><div class="lugar">Homa Bay · Kenia</div></td><td>Homa Bay</td><td>Kenia</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Aprobado" data-continente="América" data-numero="11289" data-resolucion="abril 2026"
       data-diocesis="Buenaventura" data-pais="Colombia" data-orden-estado="20">
@@ -2872,54 +2873,54 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 90 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">90 %</td><td class="fecha">—</td></tr>
 <tr data-estado="Registrado" data-continente="África" data-numero="11288" data-resolucion="octubre 2026"
-      data-diocesis="Arua" data-pais="Uganda" data-orden-estado="2">
+      data-diocesis="Arua" data-pais="Uganda" data-orden-estado="1">
       <td class="num"><a href="#11288" title="Enlace a este proyecto">11288</a></td><td><b>Formación de mujeres líderes para favorecer la Fe católica, en Lodonga</b><div class="lugar">Arua · Uganda</div></td><td>Arua</td><td>Uganda</td>
       <td><span class="pill info">Registrado</span><div class="motivo"><span class="pill warn">Pospuesto</span></div><div class="fechas">Resolución: octubre 2026</div></td>
       <td class="fecha">octubre 2026</td><td class="fecha">—</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="11287" data-resolucion="abril 2026"
-      data-diocesis="Nakuru" data-pais="Kenia" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="11287" data-resolucion="abril 2026"
+      data-diocesis="Nakuru" data-pais="Kenia" data-orden-estado="50">
       <td class="num"><a href="#11287" title="Enlace a este proyecto">11287</a></td><td><b>Finalizar despachos de Cáritas diocesana</b><div class="lugar">Nakuru · Kenia</div></td><td>Nakuru</td><td>Kenia</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
-<tr data-estado="Cerrado" data-continente="Asia" data-numero="11286" data-resolucion="abril 2026"
-      data-diocesis="Madras-Mylapore" data-pais="India" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="Asia" data-numero="11286" data-resolucion="abril 2026"
+      data-diocesis="Madras-Mylapore" data-pais="India" data-orden-estado="50">
       <td class="num"><a href="#11286" title="Enlace a este proyecto">11286</a></td><td><b>Vehículo para las activiades socio-pastorales de las Religiosas</b><div class="lugar">Madras-Mylapore · India</div></td><td>Madras-Mylapore</td><td>India</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Aprobado" data-continente="África" data-numero="11284" data-resolucion="abril 2026"
       data-diocesis="Kisantu" data-pais="Rep. Dem. del Congo" data-orden-estado="20">
       <td class="num"><a href="#11284" title="Enlace a este proyecto">11284</a></td><td><b>Construcción de Capilla para la comunidad de religiosos</b><div class="lugar">Kisantu · Rep. Dem. del Congo</div></td><td>Kisantu</td><td>Rep. Dem. del Congo</td>
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 43 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">43 %</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="11282" data-resolucion="abril 2026"
-      data-diocesis="Kpalimé" data-pais="Togo" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="11282" data-resolucion="abril 2026"
+      data-diocesis="Kpalimé" data-pais="Togo" data-orden-estado="50">
       <td class="num"><a href="#11282" title="Enlace a este proyecto">11282</a></td><td><b>Rehabilitar la iglesia Saint Michel en Blifou</b><div class="lugar">Kpalimé · Togo</div></td><td>Kpalimé</td><td>Togo</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="11281" data-resolucion="abril 2026"
-      data-diocesis="Mahenge" data-pais="Tanzania" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="11281" data-resolucion="abril 2026"
+      data-diocesis="Mahenge" data-pais="Tanzania" data-orden-estado="50">
       <td class="num"><a href="#11281" title="Enlace a este proyecto">11281</a></td><td><b>Finalizar los techos del Colegio de Infantil y Primaria San Rafael, Kilolero</b><div class="lugar">Mahenge · Tanzania</div></td><td>Mahenge</td><td>Tanzania</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="11280" data-resolucion="abril 2026"
-      data-diocesis="Ifakara" data-pais="Tanzania" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="11280" data-resolucion="abril 2026"
+      data-diocesis="Ifakara" data-pais="Tanzania" data-orden-estado="50">
       <td class="num"><a href="#11280" title="Enlace a este proyecto">11280</a></td><td><b>Rehabilitar el dispensario de maternidad , Mpanga</b><div class="lugar">Ifakara · Tanzania</div></td><td>Ifakara</td><td>Tanzania</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="11279" data-resolucion="abril 2026"
-      data-diocesis="Doume Abong-Mbang" data-pais="Camerún" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="11279" data-resolucion="abril 2026"
+      data-diocesis="Doume Abong-Mbang" data-pais="Camerún" data-orden-estado="50">
       <td class="num"><a href="#11279" title="Enlace a este proyecto">11279</a></td><td><b>Construcción de una capilla en Koum</b><div class="lugar">Doume Abong-Mbang · Camerún</div></td><td>Doume Abong-Mbang</td><td>Camerún</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Aprobado" data-continente="África" data-numero="11278" data-resolucion="abril 2026"
       data-diocesis="Kinshasa" data-pais="Rep. Dem. del Congo" data-orden-estado="20">
       <td class="num"><a href="#11278" title="Enlace a este proyecto">11278</a></td><td><b>Instalación de paneles solares para el noviciado</b><div class="lugar">Kinshasa · Rep. Dem. del Congo</div></td><td>Kinshasa</td><td>Rep. Dem. del Congo</td>
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 72 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">72 %</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="11277" data-resolucion="abril 2026"
-      data-diocesis="Kinshasa" data-pais="Rep. Dem. del Congo" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="11277" data-resolucion="abril 2026"
+      data-diocesis="Kinshasa" data-pais="Rep. Dem. del Congo" data-orden-estado="50">
       <td class="num"><a href="#11277" title="Enlace a este proyecto">11277</a></td><td><b>Construcción de Gruta Mariana para los fieles cristianos</b><div class="lugar">Kinshasa · Rep. Dem. del Congo</div></td><td>Kinshasa</td><td>Rep. Dem. del Congo</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="En estudio" data-continente="África" data-numero="11276" data-resolucion="octubre 2026"
       data-diocesis="Bata" data-pais="Guinea Ecuatorial" data-orden-estado="10">
@@ -2947,7 +2948,7 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 47 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">47 %</td><td class="fecha">—</td></tr>
 <tr data-estado="Registrado" data-continente="Asia" data-numero="11268" data-resolucion="octubre 2026"
-      data-diocesis="Sindhudurg" data-pais="India" data-orden-estado="2">
+      data-diocesis="Sindhudurg" data-pais="India" data-orden-estado="1">
       <td class="num"><a href="#11268" title="Enlace a este proyecto">11268</a></td><td><b>Construcción y Equipamiento de Instituto de Enseñanza, en Pondicherry</b><div class="lugar">Sindhudurg · India</div></td><td>Sindhudurg</td><td>India</td>
       <td><span class="pill info">Registrado</span><div class="motivo"><span class="pill warn">Pospuesto</span></div><div class="fechas">Resolución: octubre 2026</div></td>
       <td class="fecha">octubre 2026</td><td class="fecha">—</td><td class="fecha">—</td></tr>
@@ -2966,10 +2967,10 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td class="num"><a href="#11265" title="Enlace a este proyecto">11265</a></td><td><b>Vehículo para la Pastoral Diocesana</b><div class="lugar">Atakpamé · Togo</div></td><td>Atakpamé</td><td>Togo</td>
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 67 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">67 %</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="11264" data-resolucion="abril 2026"
-      data-diocesis="Musoma" data-pais="Tanzania" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="11264" data-resolucion="abril 2026"
+      data-diocesis="Musoma" data-pais="Tanzania" data-orden-estado="50">
       <td class="num"><a href="#11264" title="Enlace a este proyecto">11264</a></td><td><b>Construcción del Convento de las Hermanas, en Sirari Ng&#39;ereng&#39;ere</b><div class="lugar">Musoma · Tanzania</div></td><td>Musoma</td><td>Tanzania</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Aprobado" data-continente="América" data-numero="11263" data-resolucion="abril 2026"
       data-diocesis="Chachapoyas" data-pais="Perú" data-orden-estado="20">
@@ -3001,10 +3002,10 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td class="num"><a href="#11258" title="Enlace a este proyecto">11258</a></td><td><b>Rehabilitar la Residencia de Formadores del Seminario</b><div class="lugar">Kikwit · Rep. Dem. del Congo</div></td><td>Kikwit</td><td>Rep. Dem. del Congo</td>
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 70 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">70 %</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="11257" data-resolucion="abril 2026"
-      data-diocesis="Arusha" data-pais="Tanzania" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="11257" data-resolucion="abril 2026"
+      data-diocesis="Arusha" data-pais="Tanzania" data-orden-estado="50">
       <td class="num"><a href="#11257" title="Enlace a este proyecto">11257</a></td><td><b>Comprar Casa para las Hermanas, en Makuyuni</b><div class="lugar">Arusha · Tanzania</div></td><td>Arusha</td><td>Tanzania</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="En estudio" data-continente="África" data-numero="11256" data-resolucion="octubre 2026"
       data-diocesis="Mbeya" data-pais="Tanzania" data-orden-estado="10">
@@ -3031,15 +3032,15 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td class="num"><a href="#11252" title="Enlace a este proyecto">11252</a></td><td><b>Becas de Estudios para Seminaristas</b><div class="lugar">Itabuna · Brasil</div></td><td>Itabuna</td><td>Brasil</td>
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 50 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">50 %</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="América" data-numero="11251" data-resolucion="abril 2026"
-      data-diocesis="San Felipe" data-pais="Venezuela" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="América" data-numero="11251" data-resolucion="abril 2026"
+      data-diocesis="San Felipe" data-pais="Venezuela" data-orden-estado="50">
       <td class="num"><a href="#11251" title="Enlace a este proyecto">11251</a></td><td><b>Restaurar y Ampliar la Casa de Retiros, en Yaracuy</b><div class="lugar">San Felipe · Venezuela</div></td><td>San Felipe</td><td>Venezuela</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="11250" data-resolucion="abril 2026"
-      data-diocesis="Tororo" data-pais="Uganda" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="11250" data-resolucion="abril 2026"
+      data-diocesis="Tororo" data-pais="Uganda" data-orden-estado="50">
       <td class="num"><a href="#11250" title="Enlace a este proyecto">11250</a></td><td><b>Vehículo para Centro Escolar de las Religiosas</b><div class="lugar">Tororo · Uganda</div></td><td>Tororo</td><td>Uganda</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Aprobado" data-continente="Asia" data-numero="11249" data-resolucion="abril 2026"
       data-diocesis="Udon Thani" data-pais="Tailandia" data-orden-estado="20">
@@ -3051,15 +3052,15 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td class="num"><a href="#11248" title="Enlace a este proyecto">11248</a></td><td><b>Rehabilitación del salón parroquial</b><div class="lugar">Bata · Guinea Ecuatorial</div></td><td>Bata</td><td>Guinea Ecuatorial</td>
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 33 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">33 %</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="Asia" data-numero="11247" data-resolucion="abril 2026"
-      data-diocesis="Nalgonda" data-pais="India" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="Asia" data-numero="11247" data-resolucion="abril 2026"
+      data-diocesis="Nalgonda" data-pais="India" data-orden-estado="50">
       <td class="num"><a href="#11247" title="Enlace a este proyecto">11247</a></td><td><b>Contrucción de la Iglesia, en Miryalaguda</b><div class="lugar">Nalgonda · India</div></td><td>Nalgonda</td><td>India</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="11246" data-resolucion="abril 2026"
-      data-diocesis="Musoma" data-pais="Tanzania" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="11246" data-resolucion="abril 2026"
+      data-diocesis="Musoma" data-pais="Tanzania" data-orden-estado="50">
       <td class="num"><a href="#11246" title="Enlace a este proyecto">11246</a></td><td><b>Fortalecimiento de las Comunidades Cristianas</b><div class="lugar">Musoma · Tanzania</div></td><td>Musoma</td><td>Tanzania</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Aprobado" data-continente="América" data-numero="11245" data-resolucion="abril 2026"
       data-diocesis="Pesqueira" data-pais="Brasil" data-orden-estado="20">
@@ -3072,7 +3073,7 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 59 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">59 %</td><td class="fecha">—</td></tr>
 <tr data-estado="Registrado" data-continente="África" data-numero="11242" data-resolucion="octubre 2026"
-      data-diocesis="Arua" data-pais="Uganda" data-orden-estado="2">
+      data-diocesis="Arua" data-pais="Uganda" data-orden-estado="1">
       <td class="num"><a href="#11242" title="Enlace a este proyecto">11242</a></td><td><b>Finalizar Construcción de la Iglesia, en Yivu</b><div class="lugar">Arua · Uganda</div></td><td>Arua</td><td>Uganda</td>
       <td><span class="pill info">Registrado</span><div class="motivo"><span class="pill warn">Pospuesto</span></div><div class="fechas">Resolución: octubre 2026</div></td>
       <td class="fecha">octubre 2026</td><td class="fecha">—</td><td class="fecha">—</td></tr>
@@ -3081,15 +3082,15 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td class="num"><a href="#11241" title="Enlace a este proyecto">11241</a></td><td><b>Rehabilitar la Capilla del Seminario Menor, en Kota Koli</b><div class="lugar">Molegbe · Rep. Dem. del Congo</div></td><td>Molegbe</td><td>Rep. Dem. del Congo</td>
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 35 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">35 %</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="11240" data-resolucion="abril 2026"
-      data-diocesis="Molegbe" data-pais="Rep. Dem. del Congo" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="11240" data-resolucion="abril 2026"
+      data-diocesis="Molegbe" data-pais="Rep. Dem. del Congo" data-orden-estado="50">
       <td class="num"><a href="#11240" title="Enlace a este proyecto">11240</a></td><td><b>Motos (5) para el Seminario Menor, en Kota Koli</b><div class="lugar">Molegbe · Rep. Dem. del Congo</div></td><td>Molegbe</td><td>Rep. Dem. del Congo</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="11239" data-resolucion="abril 2026"
-      data-diocesis="Lisala" data-pais="Rep. Dem. del Congo" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="11239" data-resolucion="abril 2026"
+      data-diocesis="Lisala" data-pais="Rep. Dem. del Congo" data-orden-estado="50">
       <td class="num"><a href="#11239" title="Enlace a este proyecto">11239</a></td><td><b>Motos (3) para la Pastoral Diocesana</b><div class="lugar">Lisala · Rep. Dem. del Congo</div></td><td>Lisala</td><td>Rep. Dem. del Congo</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Aprobado" data-continente="África" data-numero="11238" data-resolucion="abril 2026"
       data-diocesis="Lisala" data-pais="Rep. Dem. del Congo" data-orden-estado="20">
@@ -3102,19 +3103,19 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 36 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">36 %</td><td class="fecha">—</td></tr>
 <tr data-estado="Registrado" data-continente="África" data-numero="11236" data-resolucion="octubre 2026"
-      data-diocesis="Kolwezi" data-pais="Rep. Dem. del Congo" data-orden-estado="2">
+      data-diocesis="Kolwezi" data-pais="Rep. Dem. del Congo" data-orden-estado="1">
       <td class="num"><a href="#11236" title="Enlace a este proyecto">11236</a></td><td><b>Motos (4) para la Pastoral, en Kapanga</b><div class="lugar">Kolwezi · Rep. Dem. del Congo</div></td><td>Kolwezi</td><td>Rep. Dem. del Congo</td>
       <td><span class="pill info">Registrado</span><div class="motivo"><span class="pill warn">Pospuesto</span></div><div class="fechas">Resolución: octubre 2026</div></td>
       <td class="fecha">octubre 2026</td><td class="fecha">—</td><td class="fecha">—</td></tr>
 <tr data-estado="Registrado" data-continente="África" data-numero="11235" data-resolucion="octubre 2026"
-      data-diocesis="Kolwezi" data-pais="Rep. Dem. del Congo" data-orden-estado="2">
+      data-diocesis="Kolwezi" data-pais="Rep. Dem. del Congo" data-orden-estado="1">
       <td class="num"><a href="#11235" title="Enlace a este proyecto">11235</a></td><td><b>Formación de Animadores Laicos, en Kasaji-Lueu</b><div class="lugar">Kolwezi · Rep. Dem. del Congo</div></td><td>Kolwezi</td><td>Rep. Dem. del Congo</td>
       <td><span class="pill info">Registrado</span><div class="motivo"><span class="pill warn">Pospuesto</span></div><div class="fechas">Resolución: octubre 2026</div></td>
       <td class="fecha">octubre 2026</td><td class="fecha">—</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="11234" data-resolucion="abril 2026"
-      data-diocesis="Kolwezi" data-pais="Rep. Dem. del Congo" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="11234" data-resolucion="abril 2026"
+      data-diocesis="Kolwezi" data-pais="Rep. Dem. del Congo" data-orden-estado="50">
       <td class="num"><a href="#11234" title="Enlace a este proyecto">11234</a></td><td><b>Instalación de Paneles Solares para la Capilla St. Marc, en Kambamb</b><div class="lugar">Kolwezi · Rep. Dem. del Congo</div></td><td>Kolwezi</td><td>Rep. Dem. del Congo</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Aprobado" data-continente="África" data-numero="11225" data-resolucion="abril 2026"
       data-diocesis="Caxito" data-pais="Angola" data-orden-estado="20">
@@ -3136,10 +3137,10 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td class="num"><a href="#11214" title="Enlace a este proyecto">11214</a></td><td><b>Rehabilitar el Salón Parroquial, en Zeu</b><div class="lugar">Nebbi · Uganda</div></td><td>Nebbi</td><td>Uganda</td>
       <td><span class="pill warn">En estudio</span><div class="fechas">Resolución: octubre 2026</div></td>
       <td class="fecha">octubre 2026</td><td class="fecha">—</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="América" data-numero="11210" data-resolucion="abril 2026"
-      data-diocesis="Cap-Haïtien" data-pais="Haití" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="América" data-numero="11210" data-resolucion="abril 2026"
+      data-diocesis="Cap-Haïtien" data-pais="Haití" data-orden-estado="50">
       <td class="num"><a href="#11210" title="Enlace a este proyecto">11210</a></td><td><b>Rehabilitar la Iglesia Parroquial, en Plaisance</b><div class="lugar">Cap-Haïtien · Haití</div></td><td>Cap-Haïtien</td><td>Haití</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Aprobado" data-continente="África" data-numero="11207" data-resolucion="abril 2026"
       data-diocesis="Tunduru-Masasi" data-pais="Tanzania" data-orden-estado="20">
@@ -3156,10 +3157,10 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td class="num"><a href="#11188" title="Enlace a este proyecto">11188</a></td><td><b>Construcción de la iglesia en Bushushu</b><div class="lugar">Shinyanga · Tanzania</div></td><td>Shinyanga</td><td>Tanzania</td>
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 80 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">80 %</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="América" data-numero="11183" data-resolucion="abril 2026"
-      data-diocesis="El Vigía-San Carlos de Zulia" data-pais="Venezuela" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="América" data-numero="11183" data-resolucion="abril 2026"
+      data-diocesis="El Vigía-San Carlos de Zulia" data-pais="Venezuela" data-orden-estado="50">
       <td class="num"><a href="#11183" title="Enlace a este proyecto">11183</a></td><td><b>Comprar Casa Parroquial</b><div class="lugar">El Vigía-San Carlos de Zulia · Venezuela</div></td><td>El Vigía-San Carlos de Zulia</td><td>Venezuela</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Aprobado" data-continente="África" data-numero="11182" data-resolucion="abril 2026"
       data-diocesis="Nebbi" data-pais="Uganda" data-orden-estado="20">
@@ -3171,10 +3172,10 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td class="num"><a href="#11180" title="Enlace a este proyecto">11180</a></td><td><b>Equipamiento de la Capilla de la Universidad - UPG</b><div class="lugar">Gitega · Burundi</div></td><td>Gitega</td><td>Burundi</td>
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 77 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">77 %</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="11178" data-resolucion="abril 2026"
-      data-diocesis="Molegbe" data-pais="Rep. Dem. del Congo" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="11178" data-resolucion="abril 2026"
+      data-diocesis="Molegbe" data-pais="Rep. Dem. del Congo" data-orden-estado="50">
       <td class="num"><a href="#11178" title="Enlace a este proyecto">11178</a></td><td><b>Construcción de Muro para Convento de las Religiosas, en Gemena</b><div class="lugar">Molegbe · Rep. Dem. del Congo</div></td><td>Molegbe</td><td>Rep. Dem. del Congo</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Aprobado" data-continente="África" data-numero="11177" data-resolucion="abril 2026"
       data-diocesis="Wa" data-pais="Ghana" data-orden-estado="20">
@@ -3187,7 +3188,7 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 65 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">65 %</td><td class="fecha">—</td></tr>
 <tr data-estado="Registrado" data-continente="África" data-numero="11165" data-resolucion="octubre 2026"
-      data-diocesis="Arusha" data-pais="Tanzania" data-orden-estado="2">
+      data-diocesis="Arusha" data-pais="Tanzania" data-orden-estado="1">
       <td class="num"><a href="#11165" title="Enlace a este proyecto">11165</a></td><td><b>Finalizar la Iglesia y Oficinas parroquiales, en Ngurdoto</b><div class="lugar">Arusha · Tanzania</div></td><td>Arusha</td><td>Tanzania</td>
       <td><span class="pill info">Registrado</span><div class="motivo"><span class="pill warn">Pospuesto</span></div><div class="fechas">Resolución: octubre 2026</div></td>
       <td class="fecha">octubre 2026</td><td class="fecha">—</td><td class="fecha">—</td></tr>
@@ -3197,7 +3198,7 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td><span class="pill warn">En estudio</span><div class="fechas">Resolución: octubre 2026</div></td>
       <td class="fecha">octubre 2026</td><td class="fecha">—</td><td class="fecha">—</td></tr>
 <tr data-estado="Registrado" data-continente="Asia" data-numero="11160" data-resolucion="octubre 2026"
-      data-diocesis="Eluru" data-pais="India" data-orden-estado="2">
+      data-diocesis="Eluru" data-pais="India" data-orden-estado="1">
       <td class="num"><a href="#11160" title="Enlace a este proyecto">11160</a></td><td><b>Vehículo para la Pastoral de la Comunidad, en Kurukkuru</b><div class="lugar">Eluru · India</div></td><td>Eluru</td><td>India</td>
       <td><span class="pill info">Registrado</span><div class="motivo"><span class="pill warn">Pospuesto</span></div><div class="fechas">Resolución: octubre 2026</div></td>
       <td class="fecha">octubre 2026</td><td class="fecha">—</td><td class="fecha">—</td></tr>
@@ -3206,15 +3207,15 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td class="num"><a href="#11159" title="Enlace a este proyecto">11159</a></td><td><b>Construcción de nueva Iglesia, en Sarmale</b><div class="lugar">Hawassa · Etiopía</div></td><td>Hawassa</td><td>Etiopía</td>
       <td><span class="pill warn">En estudio</span><div class="fechas">Resolución: octubre 2026</div></td>
       <td class="fecha">octubre 2026</td><td class="fecha">—</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="11157" data-resolucion="abril 2026"
-      data-diocesis="Fort-Portal" data-pais="Uganda" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="11157" data-resolucion="abril 2026"
+      data-diocesis="Fort-Portal" data-pais="Uganda" data-orden-estado="50">
       <td class="num"><a href="#11157" title="Enlace a este proyecto">11157</a></td><td><b>Minibús para la Casa de Formación Noviciado de Saaka</b><div class="lugar">Fort-Portal · Uganda</div></td><td>Fort-Portal</td><td>Uganda</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="11155" data-resolucion="abril 2026"
-      data-diocesis="Mahenge" data-pais="Tanzania" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="11155" data-resolucion="abril 2026"
+      data-diocesis="Mahenge" data-pais="Tanzania" data-orden-estado="50">
       <td class="num"><a href="#11155" title="Enlace a este proyecto">11155</a></td><td><b>Breviarios para la Oración de los Seminaristas Menores</b><div class="lugar">Mahenge · Tanzania</div></td><td>Mahenge</td><td>Tanzania</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Aprobado" data-continente="África" data-numero="11146" data-resolucion="abril 2026"
       data-diocesis="Malanje" data-pais="Angola" data-orden-estado="20">
@@ -3227,7 +3228,7 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 54 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">54 %</td><td class="fecha">—</td></tr>
 <tr data-estado="Registrado" data-continente="África" data-numero="11138" data-resolucion="octubre 2026"
-      data-diocesis="Konongo-Mamapong" data-pais="Ghana" data-orden-estado="2">
+      data-diocesis="Konongo-Mamapong" data-pais="Ghana" data-orden-estado="1">
       <td class="num"><a href="#11138" title="Enlace a este proyecto">11138</a></td><td><b>Construcción del Tejado de la Iglesia, en Ahenkro</b><div class="lugar">Konongo-Mamapong · Ghana</div></td><td>Konongo-Mamapong</td><td>Ghana</td>
       <td><span class="pill info">Registrado</span><div class="motivo"><span class="pill warn">Pospuesto</span></div><div class="fechas">Resolución: octubre 2026</div></td>
       <td class="fecha">octubre 2026</td><td class="fecha">—</td><td class="fecha">—</td></tr>
@@ -3251,20 +3252,20 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td class="num"><a href="#11128" title="Enlace a este proyecto">11128</a></td><td><b>Vehículo para el Departamento Diocesano de Catequesis</b><div class="lugar">Mahenge · Tanzania</div></td><td>Mahenge</td><td>Tanzania</td>
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 100 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">100 %</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="11125" data-resolucion="abril 2026"
-      data-diocesis="Morogoro" data-pais="Tanzania" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="11125" data-resolucion="abril 2026"
+      data-diocesis="Morogoro" data-pais="Tanzania" data-orden-estado="50">
       <td class="num"><a href="#11125" title="Enlace a este proyecto">11125</a></td><td><b>Construcción de muro para el convento de las Religiosas</b><div class="lugar">Morogoro · Tanzania</div></td><td>Morogoro</td><td>Tanzania</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="11123" data-resolucion="abril 2026"
-      data-diocesis="Singida" data-pais="Tanzania" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="11123" data-resolucion="abril 2026"
+      data-diocesis="Singida" data-pais="Tanzania" data-orden-estado="50">
       <td class="num"><a href="#11123" title="Enlace a este proyecto">11123</a></td><td><b>Rehabilitar el Convento de las Hermanas en Singida</b><div class="lugar">Singida · Tanzania</div></td><td>Singida</td><td>Tanzania</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
-<tr data-estado="Cerrado" data-continente="Asia" data-numero="11120" data-resolucion="abril 2026"
-      data-diocesis="Nellore" data-pais="India" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="Asia" data-numero="11120" data-resolucion="abril 2026"
+      data-diocesis="Nellore" data-pais="India" data-orden-estado="50">
       <td class="num"><a href="#11120" title="Enlace a este proyecto">11120</a></td><td><b>Finalizar Iglesia, en Siripuram</b><div class="lugar">Nellore · India</div></td><td>Nellore</td><td>India</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="En estudio" data-continente="América" data-numero="11110" data-resolucion="octubre 2026"
       data-diocesis="Huacho" data-pais="Perú" data-orden-estado="10">
@@ -3306,15 +3307,15 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td class="num"><a href="#11061" title="Enlace a este proyecto">11061</a></td><td><b>Equipamiento de mobiliario Capilla Escuela ETEFOP</b><div class="lugar">Ruhengeri · Rwanda</div></td><td>Ruhengeri</td><td>Rwanda</td>
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 62 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">62 %</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="América" data-numero="11058" data-resolucion="abril 2026"
-      data-diocesis="San Isidro" data-pais="Costa Rica" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="América" data-numero="11058" data-resolucion="abril 2026"
+      data-diocesis="San Isidro" data-pais="Costa Rica" data-orden-estado="50">
       <td class="num"><a href="#11058" title="Enlace a este proyecto">11058</a></td><td><b>Vehículo para la pastoral parroquial, en Boruca</b><div class="lugar">San Isidro · Costa Rica</div></td><td>San Isidro</td><td>Costa Rica</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
-<tr data-estado="Cerrado" data-continente="Asia" data-numero="11057" data-resolucion="abril 2026"
-      data-diocesis="Eluru" data-pais="India" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="Asia" data-numero="11057" data-resolucion="abril 2026"
+      data-diocesis="Eluru" data-pais="India" data-orden-estado="50">
       <td class="num"><a href="#11057" title="Enlace a este proyecto">11057</a></td><td><b>Construcción de Iglesia de Muparthipadu, en Attili</b><div class="lugar">Eluru · India</div></td><td>Eluru</td><td>India</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Registrado" data-continente="África" data-numero="11055" data-resolucion="octubre 2026"
       data-diocesis="Lindi" data-pais="Tanzania" data-orden-estado="0">
@@ -3326,10 +3327,10 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td class="num"><a href="#11040" title="Enlace a este proyecto">11040</a></td><td><b>Construcción de Muro y Equipamiento Radio diocesana</b><div class="lugar">Isangi · Rep. Dem. del Congo</div></td><td>Isangi</td><td>Rep. Dem. del Congo</td>
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 100 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">100 %</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="11036" data-resolucion="abril 2026"
-      data-diocesis="Arua" data-pais="Uganda" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="11036" data-resolucion="abril 2026"
+      data-diocesis="Arua" data-pais="Uganda" data-orden-estado="50">
       <td class="num"><a href="#11036" title="Enlace a este proyecto">11036</a></td><td><b>Rehabilitar la Casa de los Religiosos</b><div class="lugar">Arua · Uganda</div></td><td>Arua</td><td>Uganda</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="En estudio" data-continente="África" data-numero="10970" data-resolucion="octubre 2026"
       data-diocesis="Molegbe" data-pais="Rep. Dem. del Congo" data-orden-estado="10">
@@ -3337,7 +3338,7 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td><span class="pill warn">En estudio</span><div class="fechas">Resolución: octubre 2026</div></td>
       <td class="fecha">octubre 2026</td><td class="fecha">—</td><td class="fecha">—</td></tr>
 <tr data-estado="Registrado" data-continente="Asia" data-numero="10969" data-resolucion="octubre 2026"
-      data-diocesis="Hyderabad" data-pais="India" data-orden-estado="2">
+      data-diocesis="Hyderabad" data-pais="India" data-orden-estado="1">
       <td class="num"><a href="#10969" title="Enlace a este proyecto">10969</a></td><td><b>Construcción de nuevo Presbiterio Iglesia St. Matias</b><div class="lugar">Hyderabad · India</div></td><td>Hyderabad</td><td>India</td>
       <td><span class="pill info">Registrado</span><div class="motivo"><span class="pill warn">Pospuesto</span></div><div class="fechas">Resolución: octubre 2026</div></td>
       <td class="fecha">octubre 2026</td><td class="fecha">—</td><td class="fecha">—</td></tr>
@@ -3346,10 +3347,10 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td class="num"><a href="#10960" title="Enlace a este proyecto">10960</a></td><td><b>Ampliar la casa sacerdotal de la parroquia en Boula-Ibib</b><div class="lugar">Garoua · Camerún</div></td><td>Garoua</td><td>Camerún</td>
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 64 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">64 %</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="10953" data-resolucion="abril 2026"
-      data-diocesis="Idiofa" data-pais="Rep. Dem. del Congo" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="10953" data-resolucion="abril 2026"
+      data-diocesis="Idiofa" data-pais="Rep. Dem. del Congo" data-orden-estado="50">
       <td class="num"><a href="#10953" title="Enlace a este proyecto">10953</a></td><td><b>Construcción de Cocina para el Seminario Menor, Laba</b><div class="lugar">Idiofa · Rep. Dem. del Congo</div></td><td>Idiofa</td><td>Rep. Dem. del Congo</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Aprobado" data-continente="África" data-numero="10924" data-resolucion="abril 2026"
       data-diocesis="Antananarivo" data-pais="Madagascar" data-orden-estado="20">
@@ -3366,25 +3367,25 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
       <td class="num"><a href="#10906" title="Enlace a este proyecto">10906</a></td><td><b>Formación y Sensibilización contra los abusos sexuales y de poder</b><div class="lugar">Ngaoundéré · Camerún</div></td><td>Ngaoundéré</td><td>Camerún</td>
       <td><span class="pill ok">Aprobado</span><div class="fechas">Resolución: abril 2026<br>Asignado: 100 %</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">100 %</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="10902" data-resolucion="abril 2026"
-      data-diocesis="Kikwit" data-pais="Rep. Dem. del Congo" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="10902" data-resolucion="abril 2026"
+      data-diocesis="Kikwit" data-pais="Rep. Dem. del Congo" data-orden-estado="50">
       <td class="num"><a href="#10902" title="Enlace a este proyecto">10902</a></td><td><b>Rehabilitar la cocina del seminario de Kinzambi</b><div class="lugar">Kikwit · Rep. Dem. del Congo</div></td><td>Kikwit</td><td>Rep. Dem. del Congo</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Registrado" data-continente="Asia" data-numero="10872" data-resolucion="octubre 2026"
-      data-diocesis="Sivagangai" data-pais="India" data-orden-estado="2">
+      data-diocesis="Sivagangai" data-pais="India" data-orden-estado="1">
       <td class="num"><a href="#10872" title="Enlace a este proyecto">10872</a></td><td><b>Construcción de Oratorio en el Centro de Salud Mental</b><div class="lugar">Sivagangai · India</div></td><td>Sivagangai</td><td>India</td>
       <td><span class="pill info">Registrado</span><div class="motivo"><span class="pill warn">Pospuesto</span></div><div class="fechas">Resolución: octubre 2026</div></td>
       <td class="fecha">octubre 2026</td><td class="fecha">—</td><td class="fecha">—</td></tr>
 <tr data-estado="Registrado" data-continente="América" data-numero="10859" data-resolucion="octubre 2026"
-      data-diocesis="Floresta" data-pais="Brasil" data-orden-estado="2">
+      data-diocesis="Floresta" data-pais="Brasil" data-orden-estado="1">
       <td class="num"><a href="#10859" title="Enlace a este proyecto">10859</a></td><td><b>Vehículo para la pastoral parroquial, en Ibimirim</b><div class="lugar">Floresta · Brasil</div></td><td>Floresta</td><td>Brasil</td>
       <td><span class="pill info">Registrado</span><div class="motivo"><span class="pill warn">Pospuesto</span></div><div class="fechas">Resolución: octubre 2026</div></td>
       <td class="fecha">octubre 2026</td><td class="fecha">—</td><td class="fecha">—</td></tr>
-<tr data-estado="Cerrado" data-continente="África" data-numero="10853" data-resolucion="abril 2026"
-      data-diocesis="Kasongo" data-pais="Rep. Dem. del Congo" data-orden-estado="41">
+<tr data-estado="Denegado" data-continente="África" data-numero="10853" data-resolucion="abril 2026"
+      data-diocesis="Kasongo" data-pais="Rep. Dem. del Congo" data-orden-estado="50">
       <td class="num"><a href="#10853" title="Enlace a este proyecto">10853</a></td><td><b>Mejorar las condiciones de vida de los seminaristas</b><div class="lugar">Kasongo · Rep. Dem. del Congo</div></td><td>Kasongo</td><td>Rep. Dem. del Congo</td>
-      <td><span class="pill mut">Cerrado</span><div class="motivo"><span class="pill mut">Denegado</span></div><div class="fechas">Resolución: abril 2026<br>Cierre: abril 2026</div></td>
+      <td><span class="pill mut">Denegado</span><div class="fechas">Resolución: abril 2026<br>Cerrado: abril 2026</div></td>
       <td class="fecha">abril 2026</td><td class="fecha">—</td><td class="fecha">abril 2026</td></tr>
 <tr data-estado="Aprobado" data-continente="América" data-numero="10839" data-resolucion="abril 2026"
       data-diocesis="Trujillo" data-pais="Perú" data-orden-estado="20">
