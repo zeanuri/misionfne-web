@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fondo Nueva Evangelización · Proyectos</title>
 <meta name="description" content="Proyectos presentados al Fondo Nueva Evangelización y estado de su tramitación.">
-<meta name="huella" content="35fe70810d4b1dda0e615d137cf46e027ab3f19278c8caf0ca1124ee7c34a432">
+<meta name="huella" content="6f5b4e2715b36a4da7092b59242d33d44535a0fd27573a2c2570b21e942d05c6">
 <style>
 :root { --bg: #f4f6fb; --card: #fff; --line: #e3e8f1; --fg: #0f172a; --fg-2: #334155; --mut: #64748b; --acc: #4f46e5;
   --ok: #15803d; --ok-soft: #dcfce7; --warn: #b45309; --warn-soft: #fef3c7; --info: #0369a1; --info-soft: #e0f2fe;
@@ -70,7 +70,7 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
   <button class="estado" type="button" data-filtro="En estudio" aria-pressed="false"><span class="n">410</span><span class="pill warn">En estudio</span><small>El proyecto tiene fecha de resolución y se estudia en el Fondo y su Comité Asesor.</small></button>
   <button class="estado" type="button" data-filtro="Aprobado" aria-pressed="false"><span class="n">182</span><span class="pill ok">Aprobado</span><small>La ayuda está aprobada y en trámite de pago.</small></button>
   <button class="estado" type="button" data-filtro="Justificando" aria-pressed="false"><span class="n">0</span><span class="pill violet">Justificando</span><small>La ayuda se ha recibido; el proyecto está en marcha y pendiente de su informe final.</small></button>
-  <button class="estado" type="button" data-filtro="Cerrado" aria-pressed="false"><span class="n">0</span><span class="pill mut">Cerrado</span><small>Expediente terminado: justificado con su informe final.</small></button>
+  <button class="estado" type="button" data-filtro="Cerrado" aria-pressed="false"><span class="n">0</span><span class="pill mut">Cerrado</span><small>Solicitud terminada: justificada con su informe final o cerrada sin más trámite.</small></button>
   <button class="estado" type="button" data-filtro="Denegado" aria-pressed="false"><span class="n">77</span><span class="pill mut">Denegado</span><small>La solicitud se ha estudiado y no recibe ayuda.</small></button>
 </div>
 <div class="filtros">
@@ -80,7 +80,7 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
 </div>
 <div class="tabla">
 <table>
-<thead><tr><th aria-sort="descending"><button type="button" data-orden="numero">Número</button></th><th>Proyecto</th><th><button type="button" data-orden="diocesis">Diócesis</button></th><th><button type="button" data-orden="pais">País</button></th><th><button type="button" data-orden="estado">Estado</button></th><th title="Reunión del Comité Asesor que estudia el proyecto">Resolución<select class="f-res th-sel" aria-label="Resolución"><option value="">Todos</option><option>octubre 2026</option><option>abril 2026</option><option>octubre 2025</option><option>abril 2025</option><option>octubre 2024</option><option>abril 2024</option></select></th><th title="Cantidad asignada sobre la solicitada, en lo aprobado">% asignado</th><th title="Mes en que se cerró el expediente">Cerrado</th></tr></thead>
+<thead><tr><th aria-sort="descending"><button type="button" data-orden="numero">Número</button></th><th>Proyecto</th><th><button type="button" data-orden="diocesis">Diócesis</button></th><th><button type="button" data-orden="pais">País</button></th><th><button type="button" data-orden="estado">Estado</button></th><th title="Reunión del Comité Asesor que estudia el proyecto">Resolución<select class="f-res th-sel" aria-label="Resolución"><option value="">Todos</option><option>octubre 2026</option><option>abril 2026</option><option>octubre 2025</option><option>abril 2025</option><option>octubre 2024</option><option>abril 2024</option></select></th><th title="Cantidad asignada sobre la solicitada, en lo aprobado">% asignado</th><th title="Mes en que se cerró la solicitud">Cerrado</th></tr></thead>
 <tbody>
 <tr data-estado="En estudio" data-continente="África" data-numero="12097" data-resolucion="octubre 2026"
       data-diocesis="Mahagi-Nyoka" data-pais="Rep. Dem. del Congo" data-orden-estado="10">
@@ -3446,7 +3446,7 @@ footer { color: var(--mut); font-size: 13px; margin-top: 20px; }
   function aplicar() {
     const t = norm(q.value.trim()); const vistos = new Set(); // proyectos, no filas: un pospuesto tiene dos
     for (const f of filas) {
-      // Un número que es el de un expediente muestra solo ese, no los que lo contienen (consulta por nº, como DocShare).
+      // Un número que es el de una solicitud muestra solo esa, no los que lo contienen (consulta por nº, como DocShare).
       const texto = exacto(t) ? f.dataset.numero === t : !t || norm(f.textContent).includes(t);
       const ver = (!estado || f.dataset.estado === estado) && (!cont.value || f.dataset.continente === cont.value)
         && (!resolucion || f.dataset.resolucion === resolucion) && texto;
